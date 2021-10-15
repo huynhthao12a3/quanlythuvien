@@ -1,0 +1,53 @@
+﻿<Window x:Class="HuynhVanThao_141800706.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuynhVanThao_141800706"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+         FontFamily="Comic Sans MS"
+        Title="Quản Lý Thư Viện" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="image/home.jpg"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Image Source="image/dntu-logo.png" HorizontalAlignment="Left" Height="97" VerticalAlignment="Top" Width="102" Margin="230,73,0,0"/>
+
+        <Label x:Name="label" Content="Trung Tâm Thông Tin - Thư Viện"
+               FontSize="36" Margin="580,182,-128,427" Foreground="#fff" FontWeight="Bold" FontFamily="Comic Sans MS" Width="728"/>
+
+        <Button
+        Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+        ToolTip="Thoát chương trình"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="40" Margin="1150,10,10,650" Width="40" Click="Thoat_Click">
+            <materialDesign:PackIcon
+            Kind="LocationExit"/>
+
+        </Button>
+
+        <materialDesign:Badged
+        Badge="{materialDesign:PackIcon User}"
+        BadgeColorZoneMode="PrimaryDark" Margin="799,300,0,0">
+            <Button
+        Content="Đăng Nhập" FontSize="20"  Foreground="#fff"
+        ToolTip="Đăng nhập vào hệ thống"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="158" Click="DangNhap_Click" />
+        </materialDesign:Badged>
+
+        <materialDesign:Badged
+        Badge="{materialDesign:PackIcon AccountPlus}"
+        BadgeColorZoneMode="PrimaryDark" Margin="1001,300,0,0">
+            <Button
+        Content="Đăng Ký" FontSize="20" Foreground="#fff"
+        ToolTip="Đăng ký tài khoản"
+        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="158" Click="DangKy_Click" />
+        </materialDesign:Badged>
+
+    </Grid>
+</Window>

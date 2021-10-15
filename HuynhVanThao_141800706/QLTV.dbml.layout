@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="QLTV">
+  <DataContextMoniker Name="/QLTVDataContext" />
+  <nestedChildShapes>
+    <classShape Id="afe2d3b7-d58c-499b-b36e-4f2f0b33a661" absoluteBounds="3.5, 2.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/QLTVDataContext/tblSach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c7790fc-b54b-47a7-9d8b-87a82c22a84f" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d4a30c5-40be-40f9-896d-33cc5c10c1b8" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QLTVDataContext/tblChuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08fd5249-f2e1-469f-9ba9-6f0824790c78" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f1cd352-1ce3-4c17-aa58-88204dcc3bed" absoluteBounds="6.25, 2.25, 2, 2.155499674479167">
+      <DataClassMoniker Name="/QLTVDataContext/tblPhieuMuon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84d1e0cc-68e5-42e7-b3ca-992316e305a2" absoluteBounds="6.265, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b49da4a-fd7f-457a-ace1-6b4e07a2208c" absoluteBounds="3.5, 6.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLTVDataContext/tblSinhVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac4edc8b-53f4-432a-8617-b65960e4276e" absoluteBounds="3.515, 6.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab69037c-012b-4e3e-86af-3888a3dcdcbb" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QLTVDataContext/tblTacGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a2adb92-4b98-4510-98b5-f0e54d949ff4" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="276a9b4a-7c1d-4cf8-9cb5-4f371771f205" absoluteBounds="3.5, 9.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLTVDataContext/tblThuThu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d67d7c23-86d0-41b3-a606-90bd6bb9b920" absoluteBounds="3.515, 9.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblChuDe/tblChuDe_tblSach" />
+      <nodes>
+        <classShapeMoniker Id="2d4a30c5-40be-40f9-896d-33cc5c10c1b8" />
+        <classShapeMoniker Id="afe2d3b7-d58c-499b-b36e-4f2f0b33a661" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.32774983723958); (6.25 : 3.32774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblPhieuMuon" />
+      <nodes>
+        <classShapeMoniker Id="afe2d3b7-d58c-499b-b36e-4f2f0b33a661" />
+        <classShapeMoniker Id="9f1cd352-1ce3-4c17-aa58-88204dcc3bed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.32774983723958); (6.63541416666667 : 7.32774983723958 : JumpStart); (6.80208083333333 : 7.32774983723958 : JumpEnd); (7.25 : 7.32774983723958); (7.25 : 4.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblSinhVien/tblSinhVien_tblPhieuMuon" />
+      <nodes>
+        <classShapeMoniker Id="0b49da4a-fd7f-457a-ace1-6b4e07a2208c" />
+        <classShapeMoniker Id="9f1cd352-1ce3-4c17-aa58-88204dcc3bed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.34699625651042); (4.5 : 1.34699625651042); (4.5 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblTacGia/tblTacGia_tblSach" />
+      <nodes>
+        <classShapeMoniker Id="ab69037c-012b-4e3e-86af-3888a3dcdcbb" />
+        <classShapeMoniker Id="afe2d3b7-d58c-499b-b36e-4f2f0b33a661" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.2027498372396); (6.7187475 : 10.2027498372396); (6.7187475 : 4.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblThuThu/tblThuThu_tblPhieuMuon" />
+      <nodes>
+        <classShapeMoniker Id="276a9b4a-7c1d-4cf8-9cb5-4f371771f205" />
+        <classShapeMoniker Id="9f1cd352-1ce3-4c17-aa58-88204dcc3bed" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
