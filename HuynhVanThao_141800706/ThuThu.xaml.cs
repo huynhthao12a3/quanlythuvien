@@ -19,11 +19,16 @@ namespace HuynhVanThao_141800706
     /// </summary>
     public partial class ThuThu : Window
     {
+        public string maTT = "";
         public ThuThu()
         {
             InitializeComponent();
         }
 
+        public ThuThu(string text) : this()
+        {
+            maTT = text;
+        }
         private void Thoat_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -44,7 +49,9 @@ namespace HuynhVanThao_141800706
         }
         private void TTCN_Click(object sender, RoutedEventArgs e)
         {
-
+            ThongTinCaNhan form = new ThongTinCaNhan(maTT);
+            form.ShowDialog();
+            
         }
         private void QLSV_Click(object sender, RoutedEventArgs e)
         {

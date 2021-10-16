@@ -54,7 +54,7 @@ namespace HuynhVanThao_141800706
                     else if(tt.Count > 0)
                     {
                         this.Close();
-                        ThuThu form2 = new ThuThu();
+                        ThuThu form2 = new ThuThu(txtTaiKhoan.Text);
                         form2.ShowDialog();
                     }
                     else

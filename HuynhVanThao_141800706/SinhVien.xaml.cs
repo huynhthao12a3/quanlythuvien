@@ -24,7 +24,7 @@ namespace HuynhVanThao_141800706
         public SinhVien()
         {
             InitializeComponent();
-            LayDuLieu();
+            LayDuLieuSach();
         }
         public SinhVien(string text):this()
         {
@@ -33,7 +33,7 @@ namespace HuynhVanThao_141800706
             LayThongTinSinhVien();
 
         }
-        private void LayDuLieu()
+        private void LayDuLieuSach()
         {
             dtgTimKiemSach.ItemsSource = from sach in database.tblSaches select sach;
         }
@@ -75,9 +75,7 @@ namespace HuynhVanThao_141800706
             dtgTimKiemSach.ItemsSource = database.sp_TimKiemTacGia(txtTKTacGia.Text);
         }
 
-        private void TimMaSinhVien_KeyUp(object sender, KeyEventArgs e)
-        {
-        }
+      
 
         private void btnXacNhanDoiMatKhau_Click(object sender, RoutedEventArgs e)
         {   
@@ -97,12 +95,9 @@ namespace HuynhVanThao_141800706
                 else
                 {
                     tblSinhVien sv = database.tblSinhViens.Single(item => item.MaSV == txtMaSV.Text);
-                    sv.MaSV = txtMaSV.Text;
                     sv.MatKhauSV = txtMatKhauMoi.Password.ToString();
                     database.SubmitChanges();
                     MessageBox.Show("Thay đổi mật khẩu thành công", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    txtMaSV.Clear();
-                    txtTenSV.Clear();
                     txtMatKhauCu.Clear();
                     txtMatKhauMoi.Clear();
                 }
