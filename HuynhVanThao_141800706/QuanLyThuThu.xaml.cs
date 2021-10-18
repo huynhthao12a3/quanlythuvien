@@ -35,7 +35,7 @@ namespace HuynhVanThao_141800706
 
         private void btnThem_Click(object sender, RoutedEventArgs e)
         {
-            txtMaTT.Text = TangMaDuDong();
+            txtMaTT.Text = TangMaTuDong();
             if (txtMaTT.Text == "" || txtHoTen.Text == "" || (rdbNam.IsChecked == false && rdbNu.IsChecked == false) ||
                 txtDiaChi.Text == "" || txtNgaySinh.Text == "" || txtSDT.Text == "")
             {
@@ -141,7 +141,7 @@ namespace HuynhVanThao_141800706
             }
         }
 
-        public string TangMaDuDong()
+        public string TangMaTuDong()
         {
             
             string maTuDong = "";

@@ -13,6 +13,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize">
+
     <Grid>
         <Grid Background="#FF0693F1" Height="50" VerticalAlignment="Top" >
             <Label Content="Quản Lý Sách" FontSize="30" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
@@ -56,20 +57,21 @@
                                 </DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Image Source="image/sach.png" HorizontalAlignment="Left" Height="100" VerticalAlignment="Bottom" Width="173" Margin="190,0,0,80"/>
-                        <TextBox x:Name="txtTKTenSach" FontSize="20" materialDesign:HintAssist.Hint="Tìm theo tên sách"
+                        <Image Source="image/sach6.jpg" HorizontalAlignment="Left" Height="190" VerticalAlignment="Bottom" Width="285" Margin="90,0,0,0" RenderTransformOrigin="0.387,0.95"/>
+                        <ComboBox x:Name="cmbTimKiem" materialDesign:HintAssist.Hint="Chọn mục cần tìm" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  
+                                  FontSize="24" VerticalAlignment="Bottom" Cursor="Hand" Margin="350,0,750,66" SelectionChanged="cmbTimKiem_SelectionChanged">
+                            <ComboBoxItem x:Name="cbiMaSach" Content="Mã sách"/>
+                            <ComboBoxItem x:Name="cbiTenSach" Content="Tên sách"/>
+                            <ComboBoxItem x:Name="cbiChuDe" Content="Chủ đề"/>
+                            <ComboBoxItem x:Name="cbiTacGia" Content="Tác giả"/>
+                            <ComboBoxItem x:Name="cbiNhaXB" Content="Nhà xuất bản"/>
+                            <ComboBoxItem x:Name="cbiNamXB" Content="Năm xuất bản"/>
+                        </ComboBox>
+                        <TextBox x:Name="txtTimKiem" FontSize="20" materialDesign:HintAssist.Hint="Nội dung cần tìm"
                                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="120,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" KeyUp="TimKiemTenSach_KeyUp"/>
-                        
-                        <Image Source="image/sach.png" Height="100" VerticalAlignment="Bottom" Margin="590,0,665,80"/>
-                        <TextBox x:Name="txtTKChuDe" FontSize="20" materialDesign:HintAssist.Hint="Tìm theo chủ đề"
-                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="520,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" KeyUp="TimKiemChuDe_KeyUp"/>
-                        <Image Source="image/sach.png" Height="100" VerticalAlignment="Bottom" Margin="990,0,265,80"/>
+                                  Margin="750,0,0,66" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="350" KeyUp="txtTimKiem_KeyUp"/>
 
-                        <TextBox x:Name="txtTKTacGia" FontSize="20" materialDesign:HintAssist.Hint="Tìm theo tác giả"
-                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="920,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" KeyUp="TimKiemTacGia_KeyUp"/>
+
                     </Grid>
                 </TabItem>
 
@@ -77,33 +79,101 @@
                 <TabItem x:Name="tabChinhSua" Width="160" Height="40">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="LockReset" Foreground="#CC0000FF" Width="30" Height="30"/>
+                            <materialDesign:PackIcon Kind="FileDocumentEditOutline" Foreground="#CC0000FF" Width="30" Height="30"/>
                             <Label Content="Chỉnh sửa"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
-                        <TextBox x:Name="txtMaSV" FontSize="20" materialDesign:HintAssist.Hint="Mã số sinh viên" IsReadOnly="True" Focusable="False"
+                        <ComboBox x:Name="cmbMaSach" materialDesign:HintAssist.Hint="Mã Sách" Width="120" IsEnabled="False" IsEditable="True"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                  FontSize="20" Margin="90,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width" Cursor="Hand" SelectionChanged="cmbMaSach_SelectionChanged" />
+                        <TextBox x:Name="txtTenSach" FontSize="20" materialDesign:HintAssist.Hint="Tên Sách" IsEnabled="False"
                                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="440,34,440,0" VerticalAlignment="Top" />
-                        <TextBox x:Name="txtTenSV" FontSize="20" materialDesign:HintAssist.Hint="Tên sinh viên" IsReadOnly="True" Focusable="False"
-                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="440,134,440,0" VerticalAlignment="Top"/>
-                        <PasswordBox x:Name="txtMatKhauCu" FontSize="20" materialDesign:HintAssist.Hint="Mật khẩu cũ"
-                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                      
-                                  Margin="440,234,440,0" VerticalAlignment="Top"/>
+                                  Margin="310,30,790,0" VerticalAlignment="Top" />
+                        <ComboBox x:Name="cmbChuDe" materialDesign:HintAssist.Hint="Chủ Đề" Width="250"  IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                  FontSize="20" Margin="710,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width" Cursor="Hand"/>
+                        <ComboBox x:Name="cmbTacGia" materialDesign:HintAssist.Hint="Tác Giả" Width="250"  IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                  FontSize="20" Margin="1060,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width" Cursor="Hand"/>
+                        <TextBox x:Name="txtSoLuong" FontSize="20" materialDesign:HintAssist.Hint="Số Lượng" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="120"                 
+                                  Margin="90,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtNhaXuatBan" FontSize="20" materialDesign:HintAssist.Hint="Nhà Xuất Bản" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="300"                 
+                                  Margin="310,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtNamXuatBan" FontSize="20" materialDesign:HintAssist.Hint="Năm Xuất Bản" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250"                 
+                                  Margin="710,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtDonGia" FontSize="20" materialDesign:HintAssist.Hint="Đơn Giá (vnd)" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250"                 
+                                  Margin="1060,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-                        <PasswordBox x:Name="txtMatKhauMoi" FontSize="20" materialDesign:HintAssist.Hint="Mật khẩu mới"
-                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                      
-                                  Margin="440,334,440,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtMaViTri" FontSize="20" materialDesign:HintAssist.Hint="Mã Vị Trí" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="120"                 
+                                  Margin="90,210,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtKhuVuc" FontSize="20" materialDesign:HintAssist.Hint="Khu Vực" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="300"                 
+                                  Margin="310,210,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtKeSach" FontSize="20" materialDesign:HintAssist.Hint="Kệ Sách" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250"                 
+                                  Margin="710,210,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtOSach" FontSize="20" materialDesign:HintAssist.Hint="Ô Sách" IsEnabled="False"
+                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="250"                 
+                                  Margin="1060,210,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
                         <Button
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        materialDesign:ButtonProgressAssist.Value="-1"
-                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-                        Content="Xác nhận"
-                        Foreground="#fff"
-                        Margin="450,0,450,43"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" VerticalAlignment="Bottom" d:LayoutOverrides="Height"  />
+                          Style="{StaticResource MaterialDesignPaperButton}" 
+                        Content="Sách là tài sản vô giá, là ngọn đèn sáng bất diệt soi sáng cho con đường tri thức của mỗi chúng ta."
+                            FontSize="18" Foreground="#CC0000FF" Cursor="None"
+                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="20,0,20,20" VerticalAlignment="Bottom" Height="52"   />
+
+                        <Image Source="image/book.png" Margin="0,268,0,-42"/>
+
+                        <Grid Margin="90,230,90,170">
+                            <Button x:Name="btnThemSach" Foreground="Green" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left" Click="btnThemSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="BookPlusOutline" Width="35" Height="40"/>
+                                    <Label Content="Thêm" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnLuuThemSach" Visibility="Hidden" Foreground="Green" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left" Click="btnLuuThemSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
+                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnSuaSach" Foreground="#000" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left"  Margin="330,0,0,0" Click="btnSuaSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="BookCogOutline" Width="35" Height="40"/>
+                                    <Label Content="Sửa" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnLuuSuaSach" Visibility="Hidden" Foreground="#000" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left"  Margin="330,0,0,0" Click="btnLuuSuaSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
+                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnXoaSach" Foreground="Red" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Margin="0,0,330,0"  Click="btnXoaSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="BookRemoveOutline" Width="35" Height="40"/>
+                                    <Label Content="Xóa" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnLuuXoaSach" Foreground="Red" Visibility="Hidden" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Margin="0,0,330,0"  Click="btnLuuXoaSach_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
+                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnHuyBo" Foreground="#CC0000FF" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Click="btnHuyBo_Click">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="CloseOctagonOutline" Width="35" Height="40"/>
+                                    <Label Content="Hủy Bỏ" FontSize="24" Foreground="#CC0000FF"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
                     </Grid>
 
                 </TabItem>
