@@ -2,88 +2,88 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13" name="QLTV">
   <DataContextMoniker Name="/QLTVDataContext" />
   <nestedChildShapes>
-    <classShape Id="f52fcc16-d3a8-4a58-a40d-dfb3ae2cb5f2" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
+    <classShape Id="2daf7801-e959-473f-8512-f7c8e9385951" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/QLTVDataContext/tblChuDe" />
       <nestedChildShapes>
-        <elementListCompartment Id="ca6e57c4-0551-4f8c-96d5-f350f1e22c1f" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4d81aa2d-cc06-4837-9980-2232b30f5a0c" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7296aa80-df5e-49f9-93cf-edbd65ccec81" absoluteBounds="6.25, 0.75, 2, 2.1554996744791666">
+    <classShape Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" absoluteBounds="6.25, 0.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLTVDataContext/tblPhieuMuon" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d466f4c-9451-4ad1-b001-677e6198a3fe" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e167ac28-6f23-463a-8757-2042779ac1b3" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fea2cf51-1d88-4dbd-bd73-abb1871f6b90" absoluteBounds="3.5, 3.625, 2, 2.347801106770834">
+    <classShape Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" absoluteBounds="3.5, 3.625, 2, 2.347801106770834">
       <DataClassMoniker Name="/QLTVDataContext/tblSach" />
       <nestedChildShapes>
-        <elementListCompartment Id="31da8772-9be9-4a54-9757-911f00980dad" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d8f3ea4e-4dbc-45f0-a1c1-a775c00a9213" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9a0e874a-3bd0-4c73-91dd-0f022b1a0540" absoluteBounds="0.75, 2.25, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/QLTVDataContext/tblTacGia" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c5198bb0-b10d-4e76-bf68-1b9fc85bf357" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b1e9cb17-de65-451e-b112-c635e2fd23b1" absoluteBounds="3.5, 7.75, 2, 2.1554996744791666">
+    <classShape Id="8b75e4a7-2591-4ae2-8760-f95f404f1e7c" absoluteBounds="3.5, 7.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLTVDataContext/tblSinhVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="03e09ac6-28ea-47e0-b86d-cc829541ea1f" absoluteBounds="3.515, 8.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4b0672c0-55b2-4b19-8597-de9c50f2bd7b" absoluteBounds="3.515, 8.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ffc03103-ce12-410e-8a70-00a8d6f199da" absoluteBounds="3.5, 10.625, 2, 2.1554996744791666">
+    <classShape Id="5eab33cd-a927-4ede-86c4-ab3ce270fb93" absoluteBounds="0.75, 2.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QLTVDataContext/tblTacGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40de3144-4775-47e6-9828-d84deabe1efd" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6621f507-a6a8-49a3-b3a1-3c3abb7f3c5b" absoluteBounds="3.5, 10.625, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLTVDataContext/tblThuThu" />
       <nestedChildShapes>
-        <elementListCompartment Id="fd67a884-ebad-4cf9-9bb0-9b998e262f5f" absoluteBounds="3.515, 11.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9418ed0e-04a9-4107-8c56-a531ba2ef4d7" absoluteBounds="3.515, 11.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7a69e8d2-4d33-4124-b5c2-18a81dec84dc" absoluteBounds="6.25, 4, 2, 1.7708968098958322">
+    <classShape Id="cfd2e926-f718-437b-8523-1830e36878f1" absoluteBounds="6.25, 4, 2, 1.7708968098958322">
       <DataClassMoniker Name="/QLTVDataContext/tblViTriSach" />
       <nestedChildShapes>
-        <elementListCompartment Id="7ae26197-c913-41ef-bf36-66d224ef48d8" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c02ac911-d28c-4935-9e73-d7fa13c1e093" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(4.5 : 3.625); (4.5 : 1.82774983723958); (5.97916666666667 : 1.82774983723958 : JumpStart); (6.14583333333333 : 1.82774983723958 : JumpEnd); (6.25 : 1.82774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblPhieuMuon" />
       <nodes>
-        <classShapeMoniker Id="fea2cf51-1d88-4dbd-bd73-abb1871f6b90" />
-        <classShapeMoniker Id="7296aa80-df5e-49f9-93cf-edbd65ccec81" />
+        <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
+        <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLTVDataContext/tblChuDe/tblChuDe_tblSach" />
       <nodes>
-        <classShapeMoniker Id="f52fcc16-d3a8-4a58-a40d-dfb3ae2cb5f2" />
-        <classShapeMoniker Id="fea2cf51-1d88-4dbd-bd73-abb1871f6b90" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.84699625651042); (3.9687475 : 2.84699625651042); (3.9687475 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QLTVDataContext/tblTacGia/tblTacGia_tblSach" />
-      <nodes>
-        <classShapeMoniker Id="9a0e874a-3bd0-4c73-91dd-0f022b1a0540" />
-        <classShapeMoniker Id="fea2cf51-1d88-4dbd-bd73-abb1871f6b90" />
+        <classShapeMoniker Id="2daf7801-e959-473f-8512-f7c8e9385951" />
+        <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 7.75); (5.875 : 7.375); (5.875 : 2.39787675585937); (5.97916666666667 : 2.39787675585937 : JumpStart); (6.14583333333333 : 2.39787675585937 : JumpEnd); (6.25 : 2.39787675585937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLTVDataContext/tblSinhVien/tblSinhVien_tblPhieuMuon" />
       <nodes>
-        <classShapeMoniker Id="b1e9cb17-de65-451e-b112-c635e2fd23b1" />
-        <classShapeMoniker Id="7296aa80-df5e-49f9-93cf-edbd65ccec81" />
+        <classShapeMoniker Id="8b75e4a7-2591-4ae2-8760-f95f404f1e7c" />
+        <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.84699625651042); (3.9687475 : 2.84699625651042); (3.9687475 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLTVDataContext/tblTacGia/tblTacGia_tblSach" />
+      <nodes>
+        <classShapeMoniker Id="5eab33cd-a927-4ede-86c4-ab3ce270fb93" />
+        <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 10.6865374615385); (6.0625 : 10.1240374615385); (6.0625 : 1.25762291861979); (6.25 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLTVDataContext/tblThuThu/tblThuThu_tblPhieuMuon" />
       <nodes>
-        <classShapeMoniker Id="ffc03103-ce12-410e-8a70-00a8d6f199da" />
-        <classShapeMoniker Id="7296aa80-df5e-49f9-93cf-edbd65ccec81" />
+        <classShapeMoniker Id="6621f507-a6a8-49a3-b3a1-3c3abb7f3c5b" />
+        <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 4.88544840494792); (5.79166666666667 : 4.88544840494792 : JumpStart); (5.95833333333333 : 4.88544840494792 : JumpEnd); (5.97916666666667 : 4.88544840494792 : JumpStart); (6.14583333333333 : 4.88544840494792 : JumpEnd); (6.25 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblViTriSach" />
       <nodes>
-        <classShapeMoniker Id="fea2cf51-1d88-4dbd-bd73-abb1871f6b90" />
-        <classShapeMoniker Id="7a69e8d2-4d33-4124-b5c2-18a81dec84dc" />
+        <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
+        <classShapeMoniker Id="cfd2e926-f718-437b-8523-1830e36878f1" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

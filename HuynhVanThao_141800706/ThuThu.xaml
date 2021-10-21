@@ -53,7 +53,13 @@
             Kind="LocationExit"/>
             </Button>
         </Grid>
-        <Grid x:Name="gridMenu" Margin="1,50,0,0" Width="300" Background="#FFFFF6F6" HorizontalAlignment="Left">
+        <materialDesign:Chip x:Name="chip"
+  Content="James Willock" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="102" >
+            <materialDesign:Chip.Icon>
+                <Image Source="image/thuthu.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+        <Grid x:Name="gridMenu" Margin="1,50,0,0" Width="70" Background="#FFFFF6F6" HorizontalAlignment="Left">
             <StackPanel>
                 <Grid Height="50" Background="#FF0066BE">
                     <Button x:Name="btnOpenMenu" Width="70" Height="50"
@@ -93,7 +99,7 @@
                     <ListViewItem Height="70">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BookOpenPageVariantOutline" Margin="5" Width="40" Height="40" VerticalAlignment="Center"/>
-                            <Button Width="200" Content="Quản Lý Sách" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button  Width="200" Content="Quản Lý Sách" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="QLS_Click"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
@@ -101,7 +107,7 @@
                     <ListViewItem Height="70">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountEditOutline" Margin="5" Width="40" Height="40" VerticalAlignment="Center"/>
-                            <Button Width="200" Content="Quản Lý Tác Giả" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button Width="200" Content="Quản Lý Tác Giả" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Button_Click"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
@@ -131,7 +137,7 @@
                 </ListView>
 
             </StackPanel>
-            
+
         </Grid>
     </Grid>
 

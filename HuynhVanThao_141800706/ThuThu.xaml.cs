@@ -19,6 +19,7 @@ namespace HuynhVanThao_141800706
     /// </summary>
     public partial class ThuThu : Window
     {
+        QLTVDataContext database = new QLTVDataContext();
         public string maTT = "";
         public ThuThu()
         {
@@ -28,6 +29,8 @@ namespace HuynhVanThao_141800706
         public ThuThu(string text) : this()
         {
             maTT = text;
+            chip.Content = database.tblThuThus.Where(item => item.MaTT == maTT).Select(item => item.HoTenTT).SingleOrDefault();
+
         }
         private void Thoat_Click(object sender, RoutedEventArgs e)
         {
@@ -65,6 +68,16 @@ namespace HuynhVanThao_141800706
             form.ShowDialog();
         }
 
-        
+        private void QLS_Click(object sender, RoutedEventArgs e)
+        {
+            QuanLySach form = new QuanLySach();
+            form.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            QuanLyTacGia form = new QuanLyTacGia();
+            form.ShowDialog();
+        }
     }
 }

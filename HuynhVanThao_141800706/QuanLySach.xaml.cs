@@ -29,29 +29,7 @@ namespace HuynhVanThao_141800706
             cmbChuDe.ItemsSource = database.tblChuDes.Select(item => item.TenChuDe);
             cmbTacGia.ItemsSource = database.tblTacGias.Select(item => item.TenTacGia);
             cmbMaSach.SelectedIndex = 0;
-        }
-
-        //private void TimKiemTenSach_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    txtTKChuDe.Clear();
-        //    txtTKTacGia.Clear();
-        //    dtgSach.ItemsSource = from a in database.tblSaches
-        //                          join b in database.tblViTriSaches on a.MaSach equals b.MaSach
-        //                          where a.TenSach.Contains(txtTKTenSach.Text)
-        //                          select new { a.MaSach, a.TenSach, a.ChuDe, a.TacGia, a.NhaXB, a.NamXB, a.SoLuong, a.DonGia, b.KhuVuc, b.KeSach, b.OSach };
-        //}
-
-        //private void TimKiemChuDe_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    txtTKTenSach.Clear();
-        //    txtTKTacGia.Clear();
-        //    dtgSach.ItemsSource = from a in database.tblSaches
-        //                          join b in database.tblViTriSaches on a.MaSach equals b.MaSach
-        //                          where a.ChuDe.Contains(txtTKChuDe.Text)
-        //                          select new { a.MaSach, a.TenSach, a.ChuDe, a.TacGia, a.NhaXB, a.NamXB, a.SoLuong, a.DonGia, b.KhuVuc, b.KeSach, b.OSach };
-        //}
-
-        
+        }       
 
         private void Thoat_Click(object sender, RoutedEventArgs e)
         {

@@ -37,13 +37,6 @@
       <Association Name="tblTacGia_tblSach" Member="tblTacGia" ThisKey="TacGia" OtherKey="TenTacGia" Type="tblTacGia" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblTacGia" Member="tblTacGias">
-    <Type Name="tblTacGia">
-      <Column Name="TenTacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Association Name="tblTacGia_tblSach" Member="tblSaches" ThisKey="TenTacGia" OtherKey="TacGia" Type="tblSach" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblSinhVien" Member="tblSinhViens">
     <Type Name="tblSinhVien">
       <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -54,6 +47,13 @@
       <Column Name="SdtSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="MatKhauSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="tblSinhVien_tblPhieuMuon" Member="tblPhieuMuons" ThisKey="MaSV" OtherKey="MaSV" Type="tblPhieuMuon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTacGia" Member="tblTacGias">
+    <Type Name="tblTacGia">
+      <Column Name="TenTacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tblTacGia_tblSach" Member="tblSaches" ThisKey="TenTacGia" OtherKey="TacGia" Type="tblSach" />
     </Type>
   </Table>
   <Table Name="dbo.tblThuThu" Member="tblThuThus">

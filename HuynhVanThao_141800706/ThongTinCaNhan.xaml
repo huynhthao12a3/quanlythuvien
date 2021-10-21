@@ -33,25 +33,31 @@
                             <Label Content="Thông tin thủ thư"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Margin="30">
-                        <Grid Margin="50,100,750,100">
+                    <Grid Margin="0,0,-2,-2">
+                        <Image Source="image/ttcn.jpg" Stretch="Fill">
+                            <Image.LayoutTransform>
+                                <RotateTransform Angle="180"/>
+                            </Image.LayoutTransform>
+                        </Image>
+
+                        <Grid Margin="-35,173,900,80">
                             <Grid.Background>
                                 <ImageBrush ImageSource="image/thuthu.png"/>
                             </Grid.Background>
                         </Grid>
-                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,80,50,280" >
+                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,180,250,280" >
                             <TextBox x:Name="txtHienThiMaTT" materialDesign:HintAssist.Hint="Mã số thủ thư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                       IsReadOnly="True" Focusable="False" Width="250" Height="60" HorizontalAlignment="Left" FontSize="20"/>
                             <TextBox x:Name="txtHienThiTenTT" materialDesign:HintAssist.Hint="Họ tên thủ thư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      IsReadOnly="True" Focusable="False" Width="300" Height="60" HorizontalAlignment="Right" FontSize="20"/>
                         </Grid>
-                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,180,50,180" >
+                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,280,250,180" >
                             <TextBox x:Name="txtHienThiSDT" materialDesign:HintAssist.Hint="Số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      IsReadOnly="True" Focusable="False" Width="250" Height="60" HorizontalAlignment="Left" FontSize="20"/>
                             <TextBox x:Name="txtHienThiGioiTinh" materialDesign:HintAssist.Hint="Giới Tính" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      IsReadOnly="True" Focusable="False" Width="300" Height="60" HorizontalAlignment="Right" FontSize="20"/>
                         </Grid>
-                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,280,50,80" >
+                        <Grid HorizontalAlignment="Right" Width="650" Margin="0,380,250,80" >
                             <TextBox x:Name="txtHienThiNgaySinh" materialDesign:HintAssist.Hint="Ngày sinh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      IsReadOnly="True" Focusable="False" Width="250" Height="60" HorizontalAlignment="Left" FontSize="20"/>
                             <TextBox x:Name="txtHienThiDiaChi" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
@@ -69,19 +75,20 @@
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
+                        <Image Source="image/password.png" Margin="-123,0,-295,0" Stretch="Fill" Opacity="0.5"/>
                         <TextBox x:Name="txtMaTT" FontSize="20" materialDesign:HintAssist.Hint="Mã số thủ thư" IsReadOnly="True" Focusable="False"
                                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="440,34,440,0" VerticalAlignment="Top" />
+                                  Margin="240,34,640,0" VerticalAlignment="Top" />
                         <TextBox x:Name="txtTenTT" FontSize="20" materialDesign:HintAssist.Hint="Tên thủ thư" IsReadOnly="True" Focusable="False"
                                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"                      
-                                  Margin="440,134,440,0" VerticalAlignment="Top"/>
+                                  Margin="240,134,640,0" VerticalAlignment="Top"/>
                         <PasswordBox x:Name="txtMatKhauCu" FontSize="20" materialDesign:HintAssist.Hint="Mật khẩu cũ"
                                   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                      
-                                  Margin="440,234,440,0" VerticalAlignment="Top"/>
+                                  Margin="240,350,640,0" VerticalAlignment="Top"/>
 
                         <PasswordBox x:Name="txtMatKhauMoi" FontSize="20" materialDesign:HintAssist.Hint="Mật khẩu mới"
                                   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                      
-                                  Margin="440,334,440,0" VerticalAlignment="Top"/>
+                                  Margin="240,450,640,0" VerticalAlignment="Top"/>
                         <Button
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         materialDesign:ButtonProgressAssist.Value="-1"
@@ -89,7 +96,7 @@
                         materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                         Content="Xác nhận"
                         Foreground="#fff"
-                        Margin="450,0,450,143"
+                        Margin="250,0,650,33"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" VerticalAlignment="Bottom" d:LayoutOverrides="Height" Click="btnXacNhanDoiMatKhau_Click" />
                     </Grid>
 

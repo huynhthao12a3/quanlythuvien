@@ -48,7 +48,7 @@
                                 <DataGridTextColumn Header="Đơn Giá" Binding="{Binding DonGia}" Width="100"/>
                                 <DataGridTextColumn Header="Vị Trí">
                                     <DataGridTextColumn.Binding>
-                                        <MultiBinding StringFormat="{}{0}, {1}, {2}">
+                                        <MultiBinding StringFormat="{} Khu {0},Kệ {1},Ô {2}">
                                             <Binding Path="KhuVuc"/>
                                             <Binding Path="KeSach"/>
                                             <Binding Path="OSach"/>

@@ -39,12 +39,12 @@ namespace HuynhVanThao_141800706
     partial void InserttblSach(tblSach instance);
     partial void UpdatetblSach(tblSach instance);
     partial void DeletetblSach(tblSach instance);
-    partial void InserttblTacGia(tblTacGia instance);
-    partial void UpdatetblTacGia(tblTacGia instance);
-    partial void DeletetblTacGia(tblTacGia instance);
     partial void InserttblSinhVien(tblSinhVien instance);
     partial void UpdatetblSinhVien(tblSinhVien instance);
     partial void DeletetblSinhVien(tblSinhVien instance);
+    partial void InserttblTacGia(tblTacGia instance);
+    partial void UpdatetblTacGia(tblTacGia instance);
+    partial void DeletetblTacGia(tblTacGia instance);
     partial void InserttblThuThu(tblThuThu instance);
     partial void UpdatetblThuThu(tblThuThu instance);
     partial void DeletetblThuThu(tblThuThu instance);
@@ -107,19 +107,19 @@ namespace HuynhVanThao_141800706
 			}
 		}
 		
-		public System.Data.Linq.Table<tblTacGia> tblTacGias
-		{
-			get
-			{
-				return this.GetTable<tblTacGia>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblSinhVien> tblSinhViens
 		{
 			get
 			{
 				return this.GetTable<tblSinhVien>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblTacGia> tblTacGias
+		{
+			get
+			{
+				return this.GetTable<tblTacGia>();
 			}
 		}
 		
@@ -993,120 +993,6 @@ namespace HuynhVanThao_141800706
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTacGia")]
-	public partial class tblTacGia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenTacGia;
-		
-		private string _GhiChu;
-		
-		private EntitySet<tblSach> _tblSaches;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenTacGiaChanging(string value);
-    partial void OnTenTacGiaChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    #endregion
-		
-		public tblTacGia()
-		{
-			this._tblSaches = new EntitySet<tblSach>(new Action<tblSach>(this.attach_tblSaches), new Action<tblSach>(this.detach_tblSaches));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenTacGia
-		{
-			get
-			{
-				return this._TenTacGia;
-			}
-			set
-			{
-				if ((this._TenTacGia != value))
-				{
-					this.OnTenTacGiaChanging(value);
-					this.SendPropertyChanging();
-					this._TenTacGia = value;
-					this.SendPropertyChanged("TenTacGia");
-					this.OnTenTacGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this.OnGhiChuChanging(value);
-					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTacGia_tblSach", Storage="_tblSaches", ThisKey="TenTacGia", OtherKey="TacGia")]
-		public EntitySet<tblSach> tblSaches
-		{
-			get
-			{
-				return this._tblSaches;
-			}
-			set
-			{
-				this._tblSaches.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblSaches(tblSach entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTacGia = this;
-		}
-		
-		private void detach_tblSaches(tblSach entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTacGia = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSinhVien")]
 	public partial class tblSinhVien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1338,6 +1224,120 @@ namespace HuynhVanThao_141800706
 		{
 			this.SendPropertyChanging();
 			entity.tblSinhVien = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTacGia")]
+	public partial class tblTacGia : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenTacGia;
+		
+		private string _GhiChu;
+		
+		private EntitySet<tblSach> _tblSaches;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenTacGiaChanging(string value);
+    partial void OnTenTacGiaChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
+    #endregion
+		
+		public tblTacGia()
+		{
+			this._tblSaches = new EntitySet<tblSach>(new Action<tblSach>(this.attach_tblSaches), new Action<tblSach>(this.detach_tblSaches));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenTacGia
+		{
+			get
+			{
+				return this._TenTacGia;
+			}
+			set
+			{
+				if ((this._TenTacGia != value))
+				{
+					this.OnTenTacGiaChanging(value);
+					this.SendPropertyChanging();
+					this._TenTacGia = value;
+					this.SendPropertyChanged("TenTacGia");
+					this.OnTenTacGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this.OnGhiChuChanging(value);
+					this.SendPropertyChanging();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTacGia_tblSach", Storage="_tblSaches", ThisKey="TenTacGia", OtherKey="TacGia")]
+		public EntitySet<tblSach> tblSaches
+		{
+			get
+			{
+				return this._tblSaches;
+			}
+			set
+			{
+				this._tblSaches.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblSaches(tblSach entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTacGia = this;
+		}
+		
+		private void detach_tblSaches(tblSach entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTacGia = null;
 		}
 	}
 	
