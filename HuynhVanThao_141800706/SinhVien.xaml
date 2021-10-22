@@ -27,11 +27,11 @@
         </Grid>
         <Grid Margin="0,50,0,0">
             <TabControl>
-                <TabItem x:Name="tabThongTinSinhVien" Width="180" Height="40">
+                <TabItem x:Name="tabThongTinSinhVien" Width="220" Height="40">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="InformationOutline" Foreground="#CC0000FF" Width="30" Height="30"/>
-                            <Label Content="Thông tin sinh viên"/>
+                            <Label Content="Thông tin sinh viên" FontSize="20"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid Margin="30">
@@ -61,11 +61,11 @@
                     </Grid>
                 </TabItem>
                 <!--Tìm Kiếm Sách-->
-                <TabItem x:Name="tabTimKiemSach" Width="160" Height="40">
+                <TabItem x:Name="tabTimKiemSach" Width="180" Height="40">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BookSearchOutline" Foreground="#CC0000FF" Width="30" Height="30"  />
-                            <Label Content="Tìm kiếm sách"/>
+                            <Label Content="Tìm kiếm sách" FontSize="20"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
@@ -103,11 +103,11 @@
                 </TabItem>
 
                 <!--Đổi Mật Khẩu-->
-                <TabItem x:Name="tabDoiMatKhau" Width="160" Height="40">
+                <TabItem x:Name="tabDoiMatKhau" Width="180" Height="40">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="LockReset" Foreground="#CC0000FF" Width="30" Height="30"/>
-                            <Label Content="Đổi mật khẩu"/>
+                            <Label Content="Đổi mật khẩu" FontSize="20"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>

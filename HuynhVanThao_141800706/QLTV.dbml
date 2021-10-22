@@ -16,6 +16,7 @@
       <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NgayMuon" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="NgayTra" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="tblSach_tblPhieuMuon" Member="tblSach" ThisKey="MaSach" OtherKey="MaSach" Type="tblSach" IsForeignKey="true" />
       <Association Name="tblSinhVien_tblPhieuMuon" Member="tblSinhVien" ThisKey="MaSV" OtherKey="MaSV" Type="tblSinhVien" IsForeignKey="true" />
       <Association Name="tblThuThu_tblPhieuMuon" Member="tblThuThu" ThisKey="NguoiLap" OtherKey="MaTT" Type="tblThuThu" IsForeignKey="true" />
@@ -37,6 +38,13 @@
       <Association Name="tblTacGia_tblSach" Member="tblTacGia" ThisKey="TacGia" OtherKey="TenTacGia" Type="tblTacGia" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblTacGia" Member="tblTacGias">
+    <Type Name="tblTacGia">
+      <Column Name="TenTacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="tblTacGia_tblSach" Member="tblSaches" ThisKey="TenTacGia" OtherKey="TacGia" Type="tblSach" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblSinhVien" Member="tblSinhViens">
     <Type Name="tblSinhVien">
       <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -47,13 +55,6 @@
       <Column Name="SdtSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="MatKhauSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="tblSinhVien_tblPhieuMuon" Member="tblPhieuMuons" ThisKey="MaSV" OtherKey="MaSV" Type="tblPhieuMuon" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblTacGia" Member="tblTacGias">
-    <Type Name="tblTacGia">
-      <Column Name="TenTacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Association Name="tblTacGia_tblSach" Member="tblSaches" ThisKey="TenTacGia" OtherKey="TacGia" Type="tblSach" />
     </Type>
   </Table>
   <Table Name="dbo.tblThuThu" Member="tblThuThus">
@@ -78,6 +79,23 @@
       <Association Name="tblSach_tblViTriSach" Member="tblSach" ThisKey="MaSach" OtherKey="MaSach" Type="tblSach" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.sp_LayDuLieuSach" Method="sp_LayDuLieuSach">
+    <ElementType Name="sp_LayDuLieuSachResult">
+      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_TimKiemCa2" Method="sp_TimKiemCa2">
     <Parameter Name="MaSV1" Parameter="maSV1" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="HoTenSV1" Parameter="hoTenSV1" Type="System.String" DbType="NVarChar(100)" />
@@ -154,23 +172,6 @@
   <Function Name="dbo.sp_TimKiemTenSach" Method="sp_TimKiemTenSach">
     <Parameter Name="TenSach" Parameter="tenSach" Type="System.String" DbType="NVarChar(100)" />
     <ElementType Name="sp_TimKiemTenSachResult">
-      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_LayDuLieuSach" Method="sp_LayDuLieuSach">
-    <ElementType Name="sp_LayDuLieuSachResult">
       <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />

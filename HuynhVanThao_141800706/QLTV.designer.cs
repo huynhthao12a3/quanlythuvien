@@ -39,12 +39,12 @@ namespace HuynhVanThao_141800706
     partial void InserttblSach(tblSach instance);
     partial void UpdatetblSach(tblSach instance);
     partial void DeletetblSach(tblSach instance);
-    partial void InserttblSinhVien(tblSinhVien instance);
-    partial void UpdatetblSinhVien(tblSinhVien instance);
-    partial void DeletetblSinhVien(tblSinhVien instance);
     partial void InserttblTacGia(tblTacGia instance);
     partial void UpdatetblTacGia(tblTacGia instance);
     partial void DeletetblTacGia(tblTacGia instance);
+    partial void InserttblSinhVien(tblSinhVien instance);
+    partial void UpdatetblSinhVien(tblSinhVien instance);
+    partial void DeletetblSinhVien(tblSinhVien instance);
     partial void InserttblThuThu(tblThuThu instance);
     partial void UpdatetblThuThu(tblThuThu instance);
     partial void DeletetblThuThu(tblThuThu instance);
@@ -107,19 +107,19 @@ namespace HuynhVanThao_141800706
 			}
 		}
 		
-		public System.Data.Linq.Table<tblSinhVien> tblSinhViens
-		{
-			get
-			{
-				return this.GetTable<tblSinhVien>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblTacGia> tblTacGias
 		{
 			get
 			{
 				return this.GetTable<tblTacGia>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblSinhVien> tblSinhViens
+		{
+			get
+			{
+				return this.GetTable<tblSinhVien>();
 			}
 		}
 		
@@ -137,6 +137,13 @@ namespace HuynhVanThao_141800706
 			{
 				return this.GetTable<tblViTriSach>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDuLieuSach")]
+		public ISingleResult<sp_LayDuLieuSachResult> sp_LayDuLieuSach()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_LayDuLieuSachResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TimKiemCa2")]
@@ -179,13 +186,6 @@ namespace HuynhVanThao_141800706
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSach);
 			return ((ISingleResult<sp_TimKiemTenSachResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDuLieuSach")]
-		public ISingleResult<sp_LayDuLieuSachResult> sp_LayDuLieuSach()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_LayDuLieuSachResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -323,6 +323,8 @@ namespace HuynhVanThao_141800706
 		
 		private System.DateTime _NgayTra;
 		
+		private string _GhiChu;
+		
 		private EntityRef<tblSach> _tblSach;
 		
 		private EntityRef<tblSinhVien> _tblSinhVien;
@@ -347,6 +349,8 @@ namespace HuynhVanThao_141800706
     partial void OnNgayMuonChanged();
     partial void OnNgayTraChanging(System.DateTime value);
     partial void OnNgayTraChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
     #endregion
 		
 		public tblPhieuMuon()
@@ -505,6 +509,26 @@ namespace HuynhVanThao_141800706
 					this._NgayTra = value;
 					this.SendPropertyChanged("NgayTra");
 					this.OnNgayTraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(200)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this.OnGhiChuChanging(value);
+					this.SendPropertyChanging();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
 				}
 			}
 		}
@@ -1000,6 +1024,120 @@ namespace HuynhVanThao_141800706
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTacGia")]
+	public partial class tblTacGia : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenTacGia;
+		
+		private string _GhiChu;
+		
+		private EntitySet<tblSach> _tblSaches;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenTacGiaChanging(string value);
+    partial void OnTenTacGiaChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
+    #endregion
+		
+		public tblTacGia()
+		{
+			this._tblSaches = new EntitySet<tblSach>(new Action<tblSach>(this.attach_tblSaches), new Action<tblSach>(this.detach_tblSaches));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenTacGia
+		{
+			get
+			{
+				return this._TenTacGia;
+			}
+			set
+			{
+				if ((this._TenTacGia != value))
+				{
+					this.OnTenTacGiaChanging(value);
+					this.SendPropertyChanging();
+					this._TenTacGia = value;
+					this.SendPropertyChanged("TenTacGia");
+					this.OnTenTacGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this.OnGhiChuChanging(value);
+					this.SendPropertyChanging();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTacGia_tblSach", Storage="_tblSaches", ThisKey="TenTacGia", OtherKey="TacGia")]
+		public EntitySet<tblSach> tblSaches
+		{
+			get
+			{
+				return this._tblSaches;
+			}
+			set
+			{
+				this._tblSaches.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblSaches(tblSach entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTacGia = this;
+		}
+		
+		private void detach_tblSaches(tblSach entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTacGia = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSinhVien")]
 	public partial class tblSinhVien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1231,120 +1369,6 @@ namespace HuynhVanThao_141800706
 		{
 			this.SendPropertyChanging();
 			entity.tblSinhVien = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTacGia")]
-	public partial class tblTacGia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenTacGia;
-		
-		private string _GhiChu;
-		
-		private EntitySet<tblSach> _tblSaches;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenTacGiaChanging(string value);
-    partial void OnTenTacGiaChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    #endregion
-		
-		public tblTacGia()
-		{
-			this._tblSaches = new EntitySet<tblSach>(new Action<tblSach>(this.attach_tblSaches), new Action<tblSach>(this.detach_tblSaches));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenTacGia
-		{
-			get
-			{
-				return this._TenTacGia;
-			}
-			set
-			{
-				if ((this._TenTacGia != value))
-				{
-					this.OnTenTacGiaChanging(value);
-					this.SendPropertyChanging();
-					this._TenTacGia = value;
-					this.SendPropertyChanged("TenTacGia");
-					this.OnTenTacGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this.OnGhiChuChanging(value);
-					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTacGia_tblSach", Storage="_tblSaches", ThisKey="TenTacGia", OtherKey="TacGia")]
-		public EntitySet<tblSach> tblSaches
-		{
-			get
-			{
-				return this._tblSaches;
-			}
-			set
-			{
-				this._tblSaches.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblSaches(tblSach entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTacGia = this;
-		}
-		
-		private void detach_tblSaches(tblSach entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTacGia = null;
 		}
 	}
 	
@@ -1777,6 +1801,248 @@ namespace HuynhVanThao_141800706
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class sp_LayDuLieuSachResult
+	{
+		
+		private string _MaSach;
+		
+		private string _TenSach;
+		
+		private string _ChuDe;
+		
+		private string _TacGia;
+		
+		private string _NhaXB;
+		
+		private string _NamXB;
+		
+		private string _SoLuong;
+		
+		private string _DonGia;
+		
+		private string _MaViTri;
+		
+		private string _MaSach1;
+		
+		private string _KhuVuc;
+		
+		private string _KeSach;
+		
+		private string _OSach;
+		
+		public sp_LayDuLieuSachResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string MaSach
+		{
+			get
+			{
+				return this._MaSach;
+			}
+			set
+			{
+				if ((this._MaSach != value))
+				{
+					this._MaSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSach", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenSach
+		{
+			get
+			{
+				return this._TenSach;
+			}
+			set
+			{
+				if ((this._TenSach != value))
+				{
+					this._TenSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChuDe", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ChuDe
+		{
+			get
+			{
+				return this._ChuDe;
+			}
+			set
+			{
+				if ((this._ChuDe != value))
+				{
+					this._ChuDe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TacGia
+		{
+			get
+			{
+				return this._TacGia;
+			}
+			set
+			{
+				if ((this._TacGia != value))
+				{
+					this._TacGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhaXB", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string NhaXB
+		{
+			get
+			{
+				return this._NhaXB;
+			}
+			set
+			{
+				if ((this._NhaXB != value))
+				{
+					this._NhaXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamXB", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string NamXB
+		{
+			get
+			{
+				return this._NamXB;
+			}
+			set
+			{
+				if ((this._NamXB != value))
+				{
+					this._NamXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string DonGia
+		{
+			get
+			{
+				return this._DonGia;
+			}
+			set
+			{
+				if ((this._DonGia != value))
+				{
+					this._DonGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaViTri", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string MaViTri
+		{
+			get
+			{
+				return this._MaViTri;
+			}
+			set
+			{
+				if ((this._MaViTri != value))
+				{
+					this._MaViTri = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach1", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string MaSach1
+		{
+			get
+			{
+				return this._MaSach1;
+			}
+			set
+			{
+				if ((this._MaSach1 != value))
+				{
+					this._MaSach1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhuVuc", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string KhuVuc
+		{
+			get
+			{
+				return this._KhuVuc;
+			}
+			set
+			{
+				if ((this._KhuVuc != value))
+				{
+					this._KhuVuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KeSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string KeSach
+		{
+			get
+			{
+				return this._KeSach;
+			}
+			set
+			{
+				if ((this._KeSach != value))
+				{
+					this._KeSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string OSach
+		{
+			get
+			{
+				return this._OSach;
+			}
+			set
+			{
+				if ((this._OSach != value))
+				{
+					this._OSach = value;
+				}
 			}
 		}
 	}
@@ -2697,248 +2963,6 @@ namespace HuynhVanThao_141800706
 		private string _OSach;
 		
 		public sp_TimKiemTenSachResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string MaSach
-		{
-			get
-			{
-				return this._MaSach;
-			}
-			set
-			{
-				if ((this._MaSach != value))
-				{
-					this._MaSach = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSach", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TenSach
-		{
-			get
-			{
-				return this._TenSach;
-			}
-			set
-			{
-				if ((this._TenSach != value))
-				{
-					this._TenSach = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChuDe", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ChuDe
-		{
-			get
-			{
-				return this._ChuDe;
-			}
-			set
-			{
-				if ((this._ChuDe != value))
-				{
-					this._ChuDe = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TacGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TacGia
-		{
-			get
-			{
-				return this._TacGia;
-			}
-			set
-			{
-				if ((this._TacGia != value))
-				{
-					this._TacGia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhaXB", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string NhaXB
-		{
-			get
-			{
-				return this._NhaXB;
-			}
-			set
-			{
-				if ((this._NhaXB != value))
-				{
-					this._NhaXB = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamXB", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string NamXB
-		{
-			get
-			{
-				return this._NamXB;
-			}
-			set
-			{
-				if ((this._NamXB != value))
-				{
-					this._NamXB = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this._SoLuong = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string DonGia
-		{
-			get
-			{
-				return this._DonGia;
-			}
-			set
-			{
-				if ((this._DonGia != value))
-				{
-					this._DonGia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaViTri", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string MaViTri
-		{
-			get
-			{
-				return this._MaViTri;
-			}
-			set
-			{
-				if ((this._MaViTri != value))
-				{
-					this._MaViTri = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach1", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string MaSach1
-		{
-			get
-			{
-				return this._MaSach1;
-			}
-			set
-			{
-				if ((this._MaSach1 != value))
-				{
-					this._MaSach1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhuVuc", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string KhuVuc
-		{
-			get
-			{
-				return this._KhuVuc;
-			}
-			set
-			{
-				if ((this._KhuVuc != value))
-				{
-					this._KhuVuc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KeSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string KeSach
-		{
-			get
-			{
-				return this._KeSach;
-			}
-			set
-			{
-				if ((this._KeSach != value))
-				{
-					this._KeSach = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OSach", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string OSach
-		{
-			get
-			{
-				return this._OSach;
-			}
-			set
-			{
-				if ((this._OSach != value))
-				{
-					this._OSach = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_LayDuLieuSachResult
-	{
-		
-		private string _MaSach;
-		
-		private string _TenSach;
-		
-		private string _ChuDe;
-		
-		private string _TacGia;
-		
-		private string _NhaXB;
-		
-		private string _NamXB;
-		
-		private string _SoLuong;
-		
-		private string _DonGia;
-		
-		private string _MaViTri;
-		
-		private string _MaSach1;
-		
-		private string _KhuVuc;
-		
-		private string _KeSach;
-		
-		private string _OSach;
-		
-		public sp_LayDuLieuSachResult()
 		{
 		}
 		

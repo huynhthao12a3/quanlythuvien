@@ -29,11 +29,11 @@
         <Grid Margin="0,50,0,0">
             <TabControl>
                 <!--Tìm Kiếm Sách-->
-                <TabItem x:Name="tabThongTinSach" Width="160" Height="40">
+                <TabItem x:Name="tabThongTinSach" Width="180" Height="40">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="InformationOutline" Foreground="#CC0000FF" Width="30" Height="30"  />
-                            <Label Content="Thông tin sách"/>
+                            <Label Content="Thông tin sách" FontSize="20"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
@@ -81,7 +81,7 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="FileDocumentEditOutline" Foreground="#CC0000FF" Width="30" Height="30"/>
-                            <Label Content="Chỉnh sửa"/>
+                            <Label Content="Chỉnh sửa" FontSize="20"/>
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>

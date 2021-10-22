@@ -85,5 +85,11 @@ namespace HuynhVanThao_141800706
             QuanLyChuDe form = new QuanLyChuDe();
             form.ShowDialog();
         }
+
+        private void QLPM_Click(object sender, RoutedEventArgs e)
+        {
+            QuanLyPhieuMuon form = new QuanLyPhieuMuon();
+            form.ShowDialog();
+        }
     }
 }

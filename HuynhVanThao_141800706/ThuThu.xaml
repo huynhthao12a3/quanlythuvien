@@ -55,7 +55,8 @@
             </Button>
         </Grid>
         <materialDesign:Chip x:Name="chip"
-  Content="Họ và tên" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
+                             ToolTip="Xin chào !"
+                             Content="Họ và tên" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
             <materialDesign:Chip.Icon>
                 <Image Source="image/thuthu.png" />
             </materialDesign:Chip.Icon>
@@ -124,7 +125,7 @@
                     <ListViewItem Height="70">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CardAccountDetailsOutline" Margin="5" Width="40" Height="40" VerticalAlignment="Center"/>
-                            <Button Width="200" Content="Quản Lý Phếu Mượn" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button Width="200" Content="Quản Lý Phếu Mượn" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="QLPM_Click"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
