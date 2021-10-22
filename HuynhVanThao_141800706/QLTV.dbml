@@ -78,47 +78,10 @@
       <Association Name="tblSach_tblViTriSach" Member="tblSach" ThisKey="MaSach" OtherKey="MaSach" Type="tblSach" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.sp_TimKiemTacGia" Method="sp_TimKiemTacGia">
-    <Parameter Name="TacGia" Parameter="tacGia" Type="System.String" DbType="NVarChar(50)" />
-    <ElementType Name="sp_TimKiemTacGiaResult">
-      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemTenSach" Method="sp_TimKiemTenSach">
-    <Parameter Name="TenSach" Parameter="tenSach" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="sp_TimKiemTenSachResult">
-      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemMaSV" Method="sp_TimKiemMaSV">
-    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="NVarChar(20)" />
-    <ElementType Name="sp_TimKiemMaSVResult">
-      <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Lop" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="GioiTinhSV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinhSV" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="SdtSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="MatKhauSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemHoTenSV" Method="sp_TimKiemHoTenSV">
-    <Parameter Name="HoTenSV" Parameter="hoTenSV" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="sp_TimKiemHoTenSVResult">
+  <Function Name="dbo.sp_TimKiemCa2" Method="sp_TimKiemCa2">
+    <Parameter Name="MaSV1" Parameter="maSV1" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="HoTenSV1" Parameter="hoTenSV1" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_TimKiemCa2Result">
       <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Lop" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
@@ -139,12 +102,16 @@
       <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_TimKiemCa2" Method="sp_TimKiemCa2">
-    <Parameter Name="MaSV1" Parameter="maSV1" Type="System.String" DbType="NVarChar(20)" />
-    <Parameter Name="HoTenSV1" Parameter="hoTenSV1" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="sp_TimKiemCa2Result">
+  <Function Name="dbo.sp_TimKiemHoTenSV" Method="sp_TimKiemHoTenSV">
+    <Parameter Name="HoTenSV" Parameter="hoTenSV" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_TimKiemHoTenSVResult">
       <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Lop" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
@@ -152,6 +119,71 @@
       <Column Name="NgaySinhSV" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="SdtSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="MatKhauSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemMaSV" Method="sp_TimKiemMaSV">
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_TimKiemMaSVResult">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Lop" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinhSV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinhSV" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SdtSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhauSV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemTacGia" Method="sp_TimKiemTacGia">
+    <Parameter Name="TacGia" Parameter="tacGia" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_TimKiemTacGiaResult">
+      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemTenSach" Method="sp_TimKiemTenSach">
+    <Parameter Name="TenSach" Parameter="tenSach" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_TimKiemTenSachResult">
+      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LayDuLieuSach" Method="sp_LayDuLieuSach">
+    <ElementType Name="sp_LayDuLieuSachResult">
+      <Column Name="MaSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NhaXB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamXB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaViTri" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KhuVuc" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KeSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -44,42 +44,42 @@
         <elementListCompartment Id="c02ac911-d28c-4935-9e73-d7fa13c1e093" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 3.625); (4.5 : 1.82774983723958); (5.97916666666667 : 1.82774983723958 : JumpStart); (6.14583333333333 : 1.82774983723958 : JumpEnd); (6.25 : 1.82774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 3.625); (4.5 : 1.82774983723958); (5.97916666666667 : 1.82774983723958 : JumpStart); (6.14583333333333 : 1.82774983723958 : JumpEnd); (6.25 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblPhieuMuon" />
       <nodes>
         <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
         <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblChuDe/tblChuDe_tblSach" />
       <nodes>
         <classShapeMoniker Id="2daf7801-e959-473f-8512-f7c8e9385951" />
         <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.75); (5.875 : 7.375); (5.875 : 2.39787675585937); (5.97916666666667 : 2.39787675585937 : JumpStart); (6.14583333333333 : 2.39787675585937 : JumpEnd); (6.25 : 2.39787675585937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.75); (5.875 : 7.375); (5.875 : 2.39787675585937); (5.97916666666667 : 2.39787675585937 : JumpStart); (6.14583333333333 : 2.39787675585937 : JumpEnd); (6.25 : 2.39787675585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblSinhVien/tblSinhVien_tblPhieuMuon" />
       <nodes>
         <classShapeMoniker Id="8b75e4a7-2591-4ae2-8760-f95f404f1e7c" />
         <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.84699625651042); (3.9687475 : 2.84699625651042); (3.9687475 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.84699625651042); (3.9687475 : 2.84699625651042); (3.9687475 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblTacGia/tblTacGia_tblSach" />
       <nodes>
         <classShapeMoniker Id="5eab33cd-a927-4ede-86c4-ab3ce270fb93" />
         <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.6865374615385); (6.0625 : 10.1240374615385); (6.0625 : 1.25762291861979); (6.25 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 10.6865374615385); (6.0625 : 10.1240374615385); (6.0625 : 1.25762291861979); (6.25 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblThuThu/tblThuThu_tblPhieuMuon" />
       <nodes>
         <classShapeMoniker Id="6621f507-a6a8-49a3-b3a1-3c3abb7f3c5b" />
         <classShapeMoniker Id="11acfcb5-d39d-4fea-86b0-b61b1b1061ff" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (5.79166666666667 : 4.88544840494792 : JumpStart); (5.95833333333333 : 4.88544840494792 : JumpEnd); (5.97916666666667 : 4.88544840494792 : JumpStart); (6.14583333333333 : 4.88544840494792 : JumpEnd); (6.25 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (5.97916666666667 : 4.88544840494792 : JumpStart); (6.14583333333333 : 4.88544840494792 : JumpEnd); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblViTriSach" />
       <nodes>
         <classShapeMoniker Id="0c75f4d6-09da-4e1e-8d65-dbedc4272e6a" />

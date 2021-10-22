@@ -35,7 +35,7 @@ namespace HuynhVanThao_141800706
         }
         private void LayDuLieuSach()
         {
-            dtgTimKiemSach.ItemsSource = from sach in database.tblSaches select sach;
+            dtgTimKiemSach.ItemsSource = database.sp_LayDuLieuSach();
         }
         private void LayThongTinSinhVien()
         {

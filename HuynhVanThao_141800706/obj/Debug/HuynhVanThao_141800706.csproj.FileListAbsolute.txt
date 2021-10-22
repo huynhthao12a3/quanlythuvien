@@ -41,3 +41,5 @@ F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVa
 F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVanThao_141800706\HuynhVanThao_141800706\obj\Debug\HuynhVanThao_141800706.csproj.AssemblyReference.cache
 F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVanThao_141800706\HuynhVanThao_141800706\obj\Debug\QuanLyTacGia.g.cs
 F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVanThao_141800706\HuynhVanThao_141800706\obj\Debug\QuanLyTacGia.baml
+F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVanThao_141800706\HuynhVanThao_141800706\obj\Debug\QuanLyChuDe.g.cs
+F:\SCHOOL_DNTU\FOUR\HocKy_10\HK10_CongNgheLapTrinhTienTien\BaoCao_CuoiKy\HuynhVanThao_141800706\HuynhVanThao_141800706\obj\Debug\QuanLyChuDe.baml

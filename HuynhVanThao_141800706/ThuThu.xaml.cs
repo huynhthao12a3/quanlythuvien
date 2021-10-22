@@ -74,9 +74,15 @@ namespace HuynhVanThao_141800706
             form.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void QLTG_Click(object sender, RoutedEventArgs e)
         {
             QuanLyTacGia form = new QuanLyTacGia();
+            form.ShowDialog();
+        }
+
+        private void QLCD_Click(object sender, RoutedEventArgs e)
+        {
+            QuanLyChuDe form = new QuanLyChuDe();
             form.ShowDialog();
         }
     }

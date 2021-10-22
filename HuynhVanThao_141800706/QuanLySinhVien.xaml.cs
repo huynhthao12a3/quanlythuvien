@@ -42,7 +42,7 @@ namespace HuynhVanThao_141800706
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn thêm không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn thêm không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     ThemSinhVien();
@@ -61,7 +61,7 @@ namespace HuynhVanThao_141800706
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn sửa không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn sửa không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     SuaSinhVien();
@@ -80,7 +80,7 @@ namespace HuynhVanThao_141800706
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if(result == MessageBoxResult.Yes)
                 {
                     XoaSinhVien();

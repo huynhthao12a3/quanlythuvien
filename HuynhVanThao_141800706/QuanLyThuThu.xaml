@@ -7,8 +7,8 @@
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
-        TextElement.FontSize="14"
-         FontFamily="Comic Sans MS"
+        TextElement.FontSize="16"
+        FontFamily="Sitka Subheading"
         Title="Quản lý Thủ Thư" Height="800" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -16,6 +16,7 @@
     <Grid >
         <Grid Background="#FF0693F1" Height="50" VerticalAlignment="Top" >
             <Label Content="Quản Lý Thủ Thư" FontSize="30" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Image Source="image/dntu-logo.png" HorizontalAlignment="Left"/>
             <Button 
             Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
             ToolTip="Thoát"
@@ -28,7 +29,7 @@
         <Grid Margin="0,50,0,0">
             <DataGrid x:Name="dataGrid" FontSize="16"  IsReadOnly="True" AutoGenerateColumns="False" Margin="20,20,20,400" Background="#ccc" SelectionChanged="dataGrid_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Mã Số Thủ Thư" Width="200" Binding="{Binding MaTT}" />
+                    <DataGridTextColumn Header="Mã Số Thủ Thư" Width="180" Binding="{Binding MaTT}" />
                     <DataGridTextColumn Header="Họ Tên" Width="200" Binding="{Binding HoTenTT}"/>
                     <DataGridTextColumn Header="Giới Tính" Width="150" Binding="{Binding GioiTinhTT}"/>
                     <DataGridTextColumn Header="Ngày Sinh" Width="150" Binding="{Binding NgaySinhTT, StringFormat='dd/MM/yyyy'}"/>

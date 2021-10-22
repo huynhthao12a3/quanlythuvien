@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
-        TextElement.FontSize="14"
-         FontFamily="Comic Sans MS"
+        TextElement.FontSize="16"
+        FontFamily="Sitka Subheading"
         Title="Sinh Viên" Height="600" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -16,6 +16,7 @@
     <Grid>
         <Grid Background="#FF0693F1" Height="50" VerticalAlignment="Top" >
             <Label Content="Sinh Viên" FontSize="30" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Image Source="image/dntu-logo.png" HorizontalAlignment="Left"/>
             <Button 
             Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
             ToolTip="Đăng xuất"
@@ -70,14 +71,23 @@
                     <Grid>
                         <DataGrid x:Name="dtgTimKiemSach" Margin="10,10,10,100" AutoGenerateColumns="False" Background="#ddd" IsReadOnly="True" HorizontalScrollBarVisibility="Disabled" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Mã Sách" Binding="{Binding MaSach}" Width="100"/>
-                                <DataGridTextColumn Header="Tên Sách" Binding="{Binding TenSach}" Width="230"/>
-                                <DataGridTextColumn Header="Chủ Đề" Binding="{Binding ChuDe}" Width="150" />
-                                <DataGridTextColumn Header="Tác Giả" Binding="{Binding TacGia}" Width="180"/>
-                                <DataGridTextColumn Header="Nhà Xuất Bản" Binding="{Binding NhaXB}" Width="180"/>
+                                <DataGridTextColumn Header="Mã Sách" Binding="{Binding MaSach}" Width="90"/>
+                                <DataGridTextColumn Header="Tên Sách" Binding="{Binding TenSach}" Width="200"/>
+                                <DataGridTextColumn Header="Chủ Đề" Binding="{Binding ChuDe}" Width="130" />
+                                <DataGridTextColumn Header="Tác Giả" Binding="{Binding TacGia}" Width="150"/>
+                                <DataGridTextColumn Header="Nhà Xuất Bản" Binding="{Binding NhaXB}" Width="150"/>
                                 <DataGridTextColumn Header="Năm Xuất Bản" Binding="{Binding NamXB}" Width="120"/>
-                                <DataGridTextColumn Header="Số Lượng" Binding="{Binding SoLuong}" Width="100"/>
+                                <DataGridTextColumn Header="Số Lượng" Binding="{Binding SoLuong}" Width="90"/>
                                 <DataGridTextColumn Header="Đơn Giá" Binding="{Binding DonGia}"/>
+                                <DataGridTextColumn Header="Vị Trí">
+                                    <DataGridTextColumn.Binding>
+                                        <MultiBinding StringFormat="{} Khu {0}, Kệ {1}, Ô {2}">
+                                            <Binding Path="KhuVuc"/>
+                                            <Binding Path="KeSach"/>
+                                            <Binding Path="OSach"/>
+                                        </MultiBinding>
+                                    </DataGridTextColumn.Binding>
+                                </DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <TextBox x:Name="txtTKTenSach" FontSize="20" materialDesign:HintAssist.Hint="Tìm theo tên sách"
