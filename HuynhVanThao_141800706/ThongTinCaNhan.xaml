@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HuynhVanThao_141800706"
         mc:Ignorable="d"
+         Icon="image/icon.png"
        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="16"

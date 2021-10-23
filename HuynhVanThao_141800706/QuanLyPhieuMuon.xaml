@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HuynhVanThao_141800706"
         mc:Ignorable="d"
+         Icon="image/icon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="16"
@@ -38,7 +39,7 @@
                         <GroupBox
                               Header="Thông tin sách"
                               Style="{DynamicResource MaterialDesignGroupBox}"
-                              Margin="20,10,900,0"
+                              Margin="10,10,890,0"
                               materialDesign:ColorZoneAssist.Mode="Custom"
                               materialDesign:ColorZoneAssist.Foreground="White"
                             materialDesign:ColorZoneAssist.Background="RoyalBlue" Height="242" VerticalAlignment="Top">
@@ -62,16 +63,16 @@
                               materialDesign:ColorZoneAssist.Foreground="White"
                             materialDesign:ColorZoneAssist.Background="RoyalBlue">
                             <Grid>
-                                <TextBox x:Name="txtMaPM" FontSize="18" 
+                                <TextBox x:Name="txtMaPM" FontSize="20" 
                                           materialDesign:HintAssist.Hint="Mã phiếu mượn" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180"/>
-                                <ComboBox x:Name="cmbMaSV" FontSize="18" Margin="200,0,0,0"
+                                <ComboBox x:Name="cmbMaSV" IsEditable="True" FontSize="18" Margin="200,0,0,0"
                                           materialDesign:HintAssist.Hint="Mã Sinh Viên" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
-                                <ComboBox x:Name="cmbMaSach" FontSize="18" Margin="420,0,0,0"
+                                <ComboBox x:Name="cmbMaSach" IsEditable="True" FontSize="18" Margin="420,0,0,0"
                                           materialDesign:HintAssist.Hint="Mã sách" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
-                                <TextBox x:Name="txtNguoiLap" FontSize="18" Margin="640,0,0,0"
+                                <TextBox x:Name="txtNguoiLap" FontSize="20" Margin="640,0,0,0"
                                           materialDesign:HintAssist.Hint="Người lập" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="196"/>
                                 <TextBox x:Name="txtSoLuongMuon" FontSize="18" Margin="0,64,0,0"
@@ -87,25 +88,31 @@
                                           materialDesign:HintAssist.Hint="Ghi chú" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="196"/>
                                 <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,128,0,0" Height="54">
-                                    <Button x:Name="btnMuonMoi" Width="180" Height="32" >
+                                    <Button x:Name="btnMuonMoi" Width="180" Height="32" Click="btnMuonMoi_Click" >
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="image/muonmoi.png" Width="20" Height="20"/>
                                             <Label Content="Mượn mới" Foreground="White" />
                                         </StackPanel>
                                     </Button>
-                                    <Button x:Name="btnChoMuon" Width="200" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="False" Margin="0,11,-220,11">
+                                    <Button x:Name="btnChoMuon" Width="200" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="False" Margin="0,11,-220,11" Click="btnChoMuon_Click">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="image/chomuon.png" Width="20" Height="20"/>
                                             <Label Content="Cho mượn" Foreground="White"/>
                                         </StackPanel>
                                     </Button>
-                                    <Button x:Name="btnGiaHan" Width="200" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="False" Margin="0,11,-440,11" >
+                                    <Button x:Name="btnGiaHan" Width="200" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="False" Margin="0,11,-440,11" Click="btnGiaHan_Click" >
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="image/giahan.png" Width="20" Height="20"/>
                                             <Label Content="Gia hạn" Foreground="White"/>
                                         </StackPanel>
                                     </Button>
-                                    <Button x:Name="btnHuyBo" Width="194" Height="32" HorizontalAlignment="Right"  d:LayoutOverrides="HorizontalAlignment" Margin="0,11,-654,11" >
+                                    <Button x:Name="btnHoanTat" Width="200" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" Visibility="Hidden" Margin="0,11,-440,11" Click="btnHoanTat_Click" >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="image/giahan.png" Width="20" Height="20"/>
+                                            <Label Content="Hoàn tất" Foreground="White"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button x:Name="btnHuyBo" Width="194" Height="32" HorizontalAlignment="Right"  d:LayoutOverrides="HorizontalAlignment" IsEnabled="False" Margin="0,11,-654,11" Click="btnHuyBo_Click" >
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="image/huybo.png" Width="20" Height="20"/>
                                             <Label Content="Hủy bỏ" Foreground="White"/>
@@ -115,24 +122,24 @@
                             </Grid>
                         </GroupBox>
                         <TextBox x:Name="txtTimKiem" materialDesign:HintAssist.Hint="Tìm kiếm theo 'Mã sinh viên' / 'Mã phiếu mượn' / 'Mã sách'" 
-                                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="100,265,100,0"  VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="100,265,100,0"  VerticalAlignment="Top" KeyUp="txtTimKiem_KeyUp"/>
                         <GroupBox
                               Header="Danh sách phiếu mượn"
                               Style="{DynamicResource MaterialDesignGroupBox}"
-                              Margin="20,330,20,10"
+                              Margin="10,330,20,10"
                               materialDesign:ColorZoneAssist.Mode="Custom"
                               materialDesign:ColorZoneAssist.Foreground="White"
                             materialDesign:ColorZoneAssist.Background="RoyalBlue">
-                            <DataGrid AutoGenerateColumns="False" Background="#ddd">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="140"/>
-                                    <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding MaSV}" Width="150"/>
-                                    <DataGridTextColumn Header="Mã sách" Binding="{Binding MaSach}" Width="100"/>
-                                    <DataGridTextColumn Header="Người lập" Binding="{Binding NguoiLap}" Width="150"/>
-                                    <DataGridTextColumn Header="Số lượng mượn" Binding="{Binding SoLuong}" Width="150"/>
-                                    <DataGridTextColumn Header="Ngày mượn" Binding="{Binding NgayMuon}" Width="150"/>
-                                    <DataGridTextColumn Header="Ngày trả" Binding="{Binding NgayTra}" Width="150"/>
-                                    <DataGridTextColumn Header="Ghi chú" Binding="{Binding GhiChu}" Width="150"/>
+                            <DataGrid x:Name="dtgMuonSach" HorizontalScrollBarVisibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False" Background="#ddd" SelectionChanged="dtgMuonSach_SelectionChanged">
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn FontSize="18"  Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="140"/>
+                                    <DataGridTextColumn FontSize="18" Header="Mã sinh viên" Binding="{Binding MaSV}" Width="150"/>
+                                    <DataGridTextColumn FontSize="18" Header="Mã sách" Binding="{Binding MaSach}" Width="120"/>
+                                    <DataGridTextColumn FontSize="18" Header="Người lập" Binding="{Binding NguoiLap}" Width="130"/>
+                                    <DataGridTextColumn FontSize="18" Header="Số lượng mượn" Binding="{Binding SoLuong}" Width="150"/>
+                                    <DataGridTextColumn FontSize="18" Header="Ngày mượn" Binding="{Binding NgayMuon, StringFormat='dd/MM/yyyy'}" Width="150"/>
+                                    <DataGridTextColumn FontSize="18" Header="Ngày trả" Binding="{Binding NgayTra, StringFormat='dd/MM/yyyy'}" Width="150"/>
+                                    <DataGridTextColumn FontSize="18" Header="Ghi chú" Binding="{Binding GhiChu}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </GroupBox>
@@ -159,11 +166,11 @@
                                 <TextBox x:Name="txtMaPM1" FontSize="18" 
                                           materialDesign:HintAssist.Hint="Mã phiếu mượn" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-                                <ComboBox x:Name="txtMaSV1" FontSize="18" Margin="280,0,0,0"
-                                          materialDesign:HintAssist.Hint="Mã Sinh Viên" IsEnabled="False"
+                                <ComboBox x:Name="cmbMaSV1" FontSize="18" Margin="280,0,0,0"
+                                          materialDesign:HintAssist.Hint="Mã Sinh Viên" IsEnabled="False" IsEditable="True"
                                          Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-                                <ComboBox x:Name="txtMaSach1" FontSize="18" Margin="560,0,0,0"
-                                          materialDesign:HintAssist.Hint="Mã sách" IsEnabled="False"
+                                <ComboBox x:Name="cmbMaSach1" FontSize="18" Margin="560,0,0,0"
+                                          materialDesign:HintAssist.Hint="Mã sách" IsEnabled="False" IsEditable="True"
                                          Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
                                 <TextBox x:Name="txtNguoiLap1" FontSize="18" Margin="840,0,0,0"
                                           materialDesign:HintAssist.Hint="Người lập" IsEnabled="False"
@@ -181,23 +188,17 @@
                                           materialDesign:HintAssist.Hint="Ghi chú" IsEnabled="False"
                                          Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
                                 <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,128,0,0" Height="54">
-                                    <Button x:Name="btnTraSach" Width="250" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="True" Margin="0,23,-528,-1">
+                                    <Button x:Name="btnTraSach" Width="250" Height="32" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Width" IsEnabled="False" Margin="0,23,-650,-1" Click="btnTraSach_Click">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="image/trasach.png" Width="20" Height="20"/>
                                             <Label Content="Trả sách" Foreground="White"/>
-                                        </StackPanel>
-                                    </Button>
-                                    <Button x:Name="btnHuyBo1" Width="250" Height="32" HorizontalAlignment="Right"  d:LayoutOverrides="HorizontalAlignment" Margin="0,23,-811,-1" >
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="image/huybo.png" Width="20" Height="20"/>
-                                            <Label Content="Hủy bỏ" Foreground="White"/>
                                         </StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>
                         </GroupBox>
                         <TextBox x:Name="txtTimKiem1" materialDesign:HintAssist.Hint="Tìm kiếm theo 'Mã sinh viên' / 'Mã phiếu mượn' / 'Mã sách'" 
-                                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="300,270,300,0"  VerticalAlignment="Top"/>
+                                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="300,270,300,0"  VerticalAlignment="Top" KeyUp="txtTimKiem1_KeyUp"/>
                         <GroupBox
                               Header="Danh sách phiếu mượn"
                               Style="{DynamicResource MaterialDesignGroupBox}"
@@ -205,16 +206,16 @@
                               materialDesign:ColorZoneAssist.Mode="Custom"
                               materialDesign:ColorZoneAssist.Foreground="White"
                             materialDesign:ColorZoneAssist.Background="RoyalBlue">
-                            <DataGrid AutoGenerateColumns="False" Background="#ddd">
+                            <DataGrid x:Name="dtgTraSach" HorizontalScrollBarVisibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False" Background="#ddd" SelectionChanged="dtgTraSach_SelectionChanged">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="140"/>
-                                    <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding MaSV}" Width="150"/>
-                                    <DataGridTextColumn Header="Mã sách" Binding="{Binding MaSach}" Width="100"/>
-                                    <DataGridTextColumn Header="Người lập" Binding="{Binding NguoiLap}" Width="150"/>
-                                    <DataGridTextColumn Header="Số lượng mượn" Binding="{Binding SoLuong}" Width="150"/>
-                                    <DataGridTextColumn Header="Ngày mượn" Binding="{Binding NgayMuon}" Width="150"/>
-                                    <DataGridTextColumn Header="Ngày trả" Binding="{Binding NgayTra}" Width="150"/>
-                                    <DataGridTextColumn Header="Ghi chú" Binding="{Binding GhiChu}" Width="150"/>
+                                    <DataGridTextColumn Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="140" FontSize="17"/>
+                                    <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding MaSV}" Width="150" FontSize="17"/>
+                                    <DataGridTextColumn Header="Mã sách" Binding="{Binding MaSach}" Width="120" FontSize="17"/>
+                                    <DataGridTextColumn Header="Người lập" Binding="{Binding NguoiLap}" Width="130" FontSize="17"/>
+                                    <DataGridTextColumn Header="Số lượng mượn" Binding="{Binding SoLuong}" Width="150" FontSize="17"/>
+                                    <DataGridTextColumn Header="Ngày mượn" Binding="{Binding NgayMuon, StringFormat='dd/MM/yyyy'}" Width="150" FontSize="17"/>
+                                    <DataGridTextColumn Header="Ngày trả" Binding="{Binding NgayTra, StringFormat='dd/MM/yyyy'}" Width="150" FontSize="17"/>
+                                    <DataGridTextColumn Header="Ghi chú" Binding="{Binding GhiChu}" FontSize="17"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </GroupBox>

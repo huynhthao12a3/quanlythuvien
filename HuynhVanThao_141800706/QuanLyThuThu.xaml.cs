@@ -30,7 +30,18 @@ namespace HuynhVanThao_141800706
 
         private void btnTimKiem_Click(object sender, RoutedEventArgs e)
         {
-
+            if (txtTKMaTT.Text != "" && txtTKHoTenTT.Text == "")
+            {
+                dataGrid.ItemsSource = database.tblThuThus.Where(sv => sv.MaTT.Contains(txtTKMaTT.Text.Trim()));
+            }
+            else if (txtTKMaTT.Text == "" && txtTKHoTenTT.Text != "")
+            {
+                dataGrid.ItemsSource = database.tblThuThus.Where(sv => sv.HoTenTT.Contains(txtTKHoTenTT.Text.Trim()));
+            }
+            else
+            {
+                dataGrid.ItemsSource = database.tblThuThus.Where(sv => sv.MaTT.Contains(txtTKMaTT.Text.Trim()) && sv.HoTenTT.Contains(txtTKHoTenTT.Text.Trim()));
+            }
         }
 
         private void btnThem_Click(object sender, RoutedEventArgs e)

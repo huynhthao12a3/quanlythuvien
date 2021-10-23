@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HuynhVanThao_141800706"
         mc:Ignorable="d"
+         Icon="image/icon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="16"
@@ -35,7 +36,7 @@
         Badge="{materialDesign:PackIcon User}"
         BadgeColorZoneMode="PrimaryDark" Margin="799,300,0,0">
             <Button
-        Content="Đăng Nhập" FontSize="20"  Foreground="#fff"
+        Content="Đăng Nhập" FontSize="20" FontWeight="Bold"  Foreground="#fff"
         ToolTip="Đăng nhập vào hệ thống"
         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="158" Click="DangNhap_Click" />
         </materialDesign:Badged>
@@ -44,7 +45,7 @@
         Badge="{materialDesign:PackIcon AccountPlus}"
         BadgeColorZoneMode="PrimaryDark" Margin="1001,300,0,0">
             <Button
-        Content="Đăng Ký" FontSize="20" Foreground="#fff"
+        Content="Đăng Ký" FontSize="20" FontWeight="Bold" Foreground="#fff"
         ToolTip="Đăng ký tài khoản"
         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="158" Click="DangKy_Click" />
         </materialDesign:Badged>

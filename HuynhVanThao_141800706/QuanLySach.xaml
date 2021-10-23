@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HuynhVanThao_141800706"
         mc:Ignorable="d"
+         Icon="image/icon.png"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="16"
@@ -141,7 +142,7 @@
                             <Button x:Name="btnLuuThemSach" Visibility="Hidden" Foreground="Green" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left" Click="btnLuuThemSach_Click">
                                 <StackPanel Orientation="Horizontal" >
                                     <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
-                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                    <Label Content="Hoàn tất" FontSize="24" Foreground="#CC0000FF"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="btnSuaSach" Foreground="#000" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left"  Margin="330,0,0,0" Click="btnSuaSach_Click">
@@ -153,7 +154,7 @@
                             <Button x:Name="btnLuuSuaSach" Visibility="Hidden" Foreground="#000" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Left"  Margin="330,0,0,0" Click="btnLuuSuaSach_Click">
                                 <StackPanel Orientation="Horizontal" >
                                     <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
-                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                    <Label Content="Hoàn tất" FontSize="24" Foreground="#CC0000FF"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="btnXoaSach" Foreground="Red" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Margin="0,0,330,0"  Click="btnXoaSach_Click">
@@ -165,7 +166,7 @@
                             <Button x:Name="btnLuuXoaSach" Foreground="Red" Visibility="Hidden" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Margin="0,0,330,0"  Click="btnLuuXoaSach_Click">
                                 <StackPanel Orientation="Horizontal" >
                                     <materialDesign:PackIcon Kind="ContentSaveCheckOutline" Width="50" Height="40"/>
-                                    <Label Content="Lưu" FontSize="24" Foreground="#CC0000FF"/>
+                                    <Label Content="Hoàn tất" FontSize="24" Foreground="#CC0000FF"/>
                                 </StackPanel>
                             </Button>
                             <Button x:Name="btnHuyBo" Foreground="#CC0000FF" Background="#ddd" FontSize="20" Width="200" Height="50" HorizontalAlignment="Right"  Click="btnHuyBo_Click">
