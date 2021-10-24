@@ -188,6 +188,34 @@ namespace HuynhVanThao_141800706
 			return ((ISingleResult<sp_TimKiemTenSachResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TongSoLuongSach")]
+		public ISingleResult<sp_TongSoLuongSachResult> sp_TongSoLuongSach()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_TongSoLuongSachResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TongGiaTriSach")]
+		public ISingleResult<sp_TongGiaTriSachResult> sp_TongGiaTriSach()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_TongGiaTriSachResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SoLuongSachDangMuon")]
+		public ISingleResult<sp_SoLuongSachDangMuonResult> sp_SoLuongSachDangMuon()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_SoLuongSachDangMuonResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SoLuongSachDaMuon")]
+		public ISingleResult<sp_SoLuongSachDaMuonResult> sp_SoLuongSachDaMuon()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_SoLuongSachDaMuonResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TimKiemTheoMa")]
 		public ISingleResult<sp_TimKiemTheoMaResult> sp_TimKiemTheoMa([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string text)
 		{
@@ -195,11 +223,18 @@ namespace HuynhVanThao_141800706
 			return ((ISingleResult<sp_TimKiemTheoMaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TongSoLuongSach")]
-		public ISingleResult<sp_TongSoLuongSachResult> sp_TongSoLuongSach()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SoLuongDGDangMuon")]
+		public ISingleResult<sp_SoLuongDGDangMuonResult> sp_SoLuongDGDangMuon()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_TongSoLuongSachResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_SoLuongDGDangMuonResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SoLuongDGQuaHan")]
+		public ISingleResult<sp_SoLuongDGQuaHanResult> sp_SoLuongDGQuaHan()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_SoLuongDGQuaHanResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3189,6 +3224,110 @@ namespace HuynhVanThao_141800706
 		}
 	}
 	
+	public partial class sp_TongSoLuongSachResult
+	{
+		
+		private System.Nullable<int> _SLSach;
+		
+		public sp_TongSoLuongSachResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SLSach", DbType="Int")]
+		public System.Nullable<int> SLSach
+		{
+			get
+			{
+				return this._SLSach;
+			}
+			set
+			{
+				if ((this._SLSach != value))
+				{
+					this._SLSach = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_TongGiaTriSachResult
+	{
+		
+		private System.Nullable<int> _GiaTri;
+		
+		public sp_TongGiaTriSachResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTri", DbType="Int")]
+		public System.Nullable<int> GiaTri
+		{
+			get
+			{
+				return this._GiaTri;
+			}
+			set
+			{
+				if ((this._GiaTri != value))
+				{
+					this._GiaTri = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_SoLuongSachDangMuonResult
+	{
+		
+		private System.Nullable<int> _SLMuon;
+		
+		public sp_SoLuongSachDangMuonResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SLMuon", DbType="Int")]
+		public System.Nullable<int> SLMuon
+		{
+			get
+			{
+				return this._SLMuon;
+			}
+			set
+			{
+				if ((this._SLMuon != value))
+				{
+					this._SLMuon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_SoLuongSachDaMuonResult
+	{
+		
+		private System.Nullable<int> _SLMuon;
+		
+		public sp_SoLuongSachDaMuonResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SLMuon", DbType="Int")]
+		public System.Nullable<int> SLMuon
+		{
+			get
+			{
+				return this._SLMuon;
+			}
+			set
+			{
+				if ((this._SLMuon != value))
+				{
+					this._SLMuon = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_TimKiemTheoMaResult
 	{
 		
@@ -3341,27 +3480,53 @@ namespace HuynhVanThao_141800706
 		}
 	}
 	
-	public partial class sp_TongSoLuongSachResult
+	public partial class sp_SoLuongDGDangMuonResult
 	{
 		
-		private System.Nullable<int> _SLSach;
+		private System.Nullable<int> _Column1;
 		
-		public sp_TongSoLuongSachResult()
+		public sp_SoLuongDGDangMuonResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SLSach", DbType="Int")]
-		public System.Nullable<int> SLSach
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
 		{
 			get
 			{
-				return this._SLSach;
+				return this._Column1;
 			}
 			set
 			{
-				if ((this._SLSach != value))
+				if ((this._Column1 != value))
 				{
-					this._SLSach = value;
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_SoLuongDGQuaHanResult
+	{
+		
+		private System.Nullable<int> _SQLDGQuaHan;
+		
+		public sp_SoLuongDGQuaHanResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SQLDGQuaHan", DbType="Int")]
+		public System.Nullable<int> SQLDGQuaHan
+		{
+			get
+			{
+				return this._SQLDGQuaHan;
+			}
+			set
+			{
+				if ((this._SQLDGQuaHan != value))
+				{
+					this._SQLDGQuaHan = value;
 				}
 			}
 		}

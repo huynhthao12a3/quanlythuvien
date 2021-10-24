@@ -329,12 +329,20 @@ namespace HuynhVanThao_141800706
         {
             tblSach sach = database.tblSaches.Single(item => item.MaSach == cmbMaSach.Text);
             tblViTriSach vt = database.tblViTriSaches.Single(item => item.MaViTri == txtMaViTri.Text);
+            try
+            {
+                database.tblSaches.DeleteOnSubmit(sach);
+                database.tblViTriSaches.DeleteOnSubmit(vt);
+                database.SubmitChanges();
+                MessageBox.Show("Xóa thông tin sách thành công.", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                LayDuLieu();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa không thành công.", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            database.tblSaches.DeleteOnSubmit(sach);
-            database.tblViTriSaches.DeleteOnSubmit(vt);
-            database.SubmitChanges();
-            MessageBox.Show("Xóa thông tin sách thành công.", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information);
-            LayDuLieu();
+            }
+            
         }
         private bool KiemTraTrong()
         {

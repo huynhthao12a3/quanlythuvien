@@ -44,7 +44,7 @@
         <elementListCompartment Id="2ca14bd8-f0e0-4e3f-87ce-f31d5cedf404" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 3.75); (4.5 : 1.92390055338542); (6.25 : 1.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 3.75); (4.5 : 1.92390055338542); (5.97916666666667 : 1.92390055338542 : JumpStart); (6.14583333333333 : 1.92390055338542 : JumpEnd); (6.25 : 1.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLTVDataContext/tblSach/tblSach_tblPhieuMuon" />
       <nodes>
         <classShapeMoniker Id="c039c078-ca1f-41c0-a6b4-51c88cc0425a" />

@@ -25,6 +25,7 @@ namespace HuynhVanThao_141800706
         {
             InitializeComponent();
             LayDuLieu();
+            cmbLSMaSV.ItemsSource = database.tblSinhViens.Select(item => item.MaSV);
         }
         public QuanLyPhieuMuon(string text) : this()
         {
@@ -127,6 +128,7 @@ namespace HuynhVanThao_141800706
             if (result == MessageBoxResult.Yes)
             {
                 tblPhieuMuon pm = database.tblPhieuMuons.Where(item => item.MaPhieuMuon == txtMaPM1.Text).SingleOrDefault();
+                pm.NgayTra = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
                 pm.GhiChu = "Đã trả sách";
                 database.SubmitChanges();
                 TangSoLuongSach(cmbMaSach1.Text, Convert.ToInt32(txtSoLuongMuon1.Text));
@@ -192,6 +194,27 @@ namespace HuynhVanThao_141800706
                 txtGhiChu1.Text = pm.GhiChu.ToString();
 
                 btnTraSach.IsEnabled = true;
+            }
+        }
+        private void cmbLSMaSV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbLSMaSV.SelectedIndex >= 0)
+            {
+                tblSinhVien sv = database.tblSinhViens.Where(item => item.MaSV == cmbLSMaSV.SelectedItem as string).SingleOrDefault();
+                txtLSTenSV.Text = sv.HoTenSV;
+
+                dtgLSMuon.ItemsSource = from a in database.tblPhieuMuons
+                                        join b in database.tblSaches on a.MaSach equals b.MaSach
+                                        where a.MaSV == cmbLSMaSV.SelectedItem as string && a.GhiChu != "Đã trả sách"
+                                        select new { a.MaPhieuMuon, a.MaSach, a.NgayMuon, b.TenSach };
+                dtgLSTra.ItemsSource = from a in database.tblPhieuMuons
+                                        join b in database.tblSaches on a.MaSach equals b.MaSach
+                                        where a.MaSV == cmbLSMaSV.SelectedItem as string && a.GhiChu == "Đã trả sách"
+                                        select new { a.MaPhieuMuon, a.MaSach, a.NgayTra, b.TenSach };
+            }
+            else
+            {
+                return;
             }
         }
         private void SetControlTrueMuon()
@@ -289,6 +312,11 @@ namespace HuynhVanThao_141800706
             sach.SoLuong = Convert.ToString(slSach);
             database.SubmitChanges();
         }
+        private void LayDuLieuLichSu()
+        {
 
+        }
+
+        
     }
 }

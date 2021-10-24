@@ -91,5 +91,11 @@ namespace HuynhVanThao_141800706
             QuanLyPhieuMuon form = new QuanLyPhieuMuon(maTT);
             form.ShowDialog();
         }
+
+        private void ThongKe_Click(object sender, RoutedEventArgs e)
+        {
+            ThongKe form = new ThongKe();
+            form.ShowDialog();
+        }
     }
 }

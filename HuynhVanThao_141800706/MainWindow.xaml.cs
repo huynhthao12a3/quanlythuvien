@@ -44,5 +44,10 @@ namespace HuynhVanThao_141800706
             Application.Current.Shutdown();
 
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            image.Visibility = Visibility.Hidden;
+        }
     }
 }

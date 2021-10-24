@@ -49,6 +49,6 @@
         ToolTip="Đăng ký tài khoản"
         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="158" Click="DangKy_Click" />
         </materialDesign:Badged>
-
+        <Image x:Name="image" Source="image/gioithieu.png" Stretch="Fill" MouseDown="Image_MouseDown" />
     </Grid>
 </Window>

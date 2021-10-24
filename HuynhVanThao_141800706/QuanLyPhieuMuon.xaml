@@ -221,6 +221,59 @@
                         </GroupBox>
                     </Grid>
                 </TabItem>
+
+                <TabItem x:Name="tabLichSu" Width="220" Height="40">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="History" Foreground="#CC0000FF" Width="30" Height="30"/>
+                            <Label Content="Lịch sử mượn - trả" FontSize="20"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <ComboBox x:Name="cmbLSMaSV" FontSize="18" Margin="330,20,0,0"
+                                          materialDesign:HintAssist.Hint="Mã Sinh Viên" IsEditable="True"
+                                         Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250" SelectionChanged="cmbLSMaSV_SelectionChanged"/>
+                        <TextBox x:Name="txtLSTenSV" FontSize="18" Margin="0,20,330,0" 
+                                          materialDesign:HintAssist.Hint="Tên Sinh Viên" IsEnabled="False"
+                                         Style="{StaticResource MaterialDesignOutlinedTextBox}" Height="54" VerticalAlignment="Top" HorizontalAlignment="Right" Width="250"/>
+                        <GroupBox
+                              Header="Lịch sử mượn sách"
+                              Style="{DynamicResource MaterialDesignGroupBox}"
+                              Margin="10,90,0,0" Width="570" Height="500"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                              materialDesign:ColorZoneAssist.Mode="Custom"
+                              materialDesign:ColorZoneAssist.Foreground="White"
+                            materialDesign:ColorZoneAssist.Background="SlateBlue">
+                            <DataGrid x:Name="dtgLSMuon" HorizontalScrollBarVisibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False" Background="#ddd">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="130"/>
+                                    <DataGridTextColumn Header="Mã sách" Binding="{Binding MaSach}" Width="80" />
+                                    <DataGridTextColumn Header="Tên sách" Binding="{Binding TenSach}" Width="220" />
+                                    <DataGridTextColumn Header="Ngày mượn" Binding="{Binding NgayMuon, StringFormat='dd/MM/yyyy'}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </GroupBox>
+
+                        <GroupBox
+                              Header="Lịch sử trả sách"
+                              Style="{DynamicResource MaterialDesignGroupBox}"
+                              Margin="0,90,10,0" Width="570" Height="500"
+                            HorizontalAlignment="Right" VerticalAlignment="Top"
+                              materialDesign:ColorZoneAssist.Mode="Custom"
+                              materialDesign:ColorZoneAssist.Foreground="White"
+                            materialDesign:ColorZoneAssist.Background="SlateBlue">
+                            <DataGrid x:Name="dtgLSTra" HorizontalScrollBarVisibility="Hidden" IsReadOnly="True" AutoGenerateColumns="False" Background="#ddd">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Mã phiếu mượn" Binding="{Binding MaPhieuMuon}" Width="130" />
+                                    <DataGridTextColumn Header="Mã sách" Binding="{Binding MaSach}" Width="80" />
+                                    <DataGridTextColumn Header="Tên sách" Binding="{Binding TenSach}" Width="220"/>
+                                    <DataGridTextColumn Header="Ngày trả" Binding="{Binding NgayTra, StringFormat='dd/MM/yyyy'}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </GroupBox>
+
+                    </Grid>
+                </TabItem>
             </TabControl>
         </Grid>
     </Grid>

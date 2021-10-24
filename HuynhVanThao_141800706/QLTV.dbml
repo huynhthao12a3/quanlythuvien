@@ -187,6 +187,26 @@
       <Column Name="OSach" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_TongSoLuongSach" Method="sp_TongSoLuongSach">
+    <ElementType Name="sp_TongSoLuongSachResult">
+      <Column Name="SLSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TongGiaTriSach" Method="sp_TongGiaTriSach">
+    <ElementType Name="sp_TongGiaTriSachResult">
+      <Column Name="GiaTri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SoLuongSachDangMuon" Method="sp_SoLuongSachDangMuon">
+    <ElementType Name="sp_SoLuongSachDangMuonResult">
+      <Column Name="SLMuon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SoLuongSachDaMuon" Method="sp_SoLuongSachDaMuon">
+    <ElementType Name="sp_SoLuongSachDaMuonResult">
+      <Column Name="SLMuon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_TimKiemTheoMa" Method="sp_TimKiemTheoMa">
     <Parameter Name="text" Type="System.String" DbType="NVarChar(20)" />
     <ElementType Name="sp_TimKiemTheoMaResult">
@@ -200,9 +220,14 @@
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_TongSoLuongSach" Method="sp_TongSoLuongSach">
-    <ElementType Name="sp_TongSoLuongSachResult">
-      <Column Name="SLSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Function Name="dbo.sp_SoLuongDGDangMuon" Method="sp_SoLuongDGDangMuon">
+    <ElementType Name="sp_SoLuongDGDangMuonResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SoLuongDGQuaHan" Method="sp_SoLuongDGQuaHan">
+    <ElementType Name="sp_SoLuongDGQuaHanResult">
+      <Column Name="SQLDGQuaHan" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

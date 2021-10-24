@@ -45,7 +45,7 @@
 
     <Grid>
         <Grid Background="#FF0693F1" Height="50" VerticalAlignment="Top" >
-            <Label Content="Quản Lý Thư Viện" FontSize="30" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Content="Phần Mềm Quản Lý Thư Viện" FontSize="30" Foreground="#fff" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Image Source="image/dntu-logo.png" HorizontalAlignment="Left"/>
             <Button 
             Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
@@ -57,7 +57,7 @@
         </Grid>
         <materialDesign:Chip x:Name="chip"
                              ToolTip="Xin chào !"
-                             Content="Họ và tên" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
+                             Content="Họ và tên" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
             <materialDesign:Chip.Icon>
                 <Image Source="image/thuthu.png" />
             </materialDesign:Chip.Icon>
@@ -134,7 +134,7 @@
                     <ListViewItem Height="70">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="MicrosoftExcel" Margin="5" Width="40" Height="40" VerticalAlignment="Center"/>
-                            <Button Width="200" Content="Thống Kê" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button Width="200" Content="Thống Kê" Margin="20 10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="ThongKe_Click"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

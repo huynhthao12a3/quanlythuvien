@@ -132,10 +132,17 @@ namespace HuynhVanThao_141800706
             MessageBoxResult result = MessageBox.Show("Bạn có muốn xóa thông tin tác giả hiện tại không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                tblTacGia tg = database.tblTacGias.Where(item => item.TenTacGia == cmbTenTG.SelectedItem as string).SingleOrDefault();
-                database.tblTacGias.DeleteOnSubmit(tg);
-                database.SubmitChanges();
-                MessageBox.Show("Xóa thông tin tác giả thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                try
+                {
+                    tblTacGia tg = database.tblTacGias.Where(item => item.TenTacGia == cmbTenTG.SelectedItem as string).SingleOrDefault();
+                    database.tblTacGias.DeleteOnSubmit(tg);
+                    database.SubmitChanges();
+                    MessageBox.Show("Xóa thông tin tác giả thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Xóa không thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
     }

@@ -132,10 +132,17 @@ namespace HuynhVanThao_141800706
             MessageBoxResult result = MessageBox.Show("Bạn có muốn xóa thông tin chủ đề hiện tại không ?", "Xác Nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                tblChuDe cd = database.tblChuDes.Where(item => item.TenChuDe == cmbTenCD.SelectedItem as string).SingleOrDefault();
-                database.tblChuDes.DeleteOnSubmit(cd);
-                database.SubmitChanges();
-                MessageBox.Show("Xóa thông tin chủ đề thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                try
+                {
+                    tblChuDe cd = database.tblChuDes.Where(item => item.TenChuDe == cmbTenCD.SelectedItem as string).SingleOrDefault();
+                    database.tblChuDes.DeleteOnSubmit(cd);
+                    database.SubmitChanges();
+                    MessageBox.Show("Xóa thông tin chủ đề thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Xóa không thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
     }
