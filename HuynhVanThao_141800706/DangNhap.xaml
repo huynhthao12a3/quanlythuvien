@@ -32,7 +32,7 @@
             </Button>
         </Grid>
 
-        <TextBox x:Name="txtTaiKhoan" FontSize="24" 
+        <TextBox x:Name="txtTaiKhoan" FontSize="24"  CharacterCasing="Upper"
                  materialDesign:HintAssist.Hint="Tên tài khoản" 
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                  Margin="330,69,70,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>

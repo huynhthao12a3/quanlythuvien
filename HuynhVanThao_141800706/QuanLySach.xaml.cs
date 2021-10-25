@@ -24,11 +24,8 @@ namespace HuynhVanThao_141800706
         {
             InitializeComponent();
             LayDuLieu();
-            //dtgSach.ItemsSource = database.tblSaches.Select(item => item);
-            cmbMaSach.ItemsSource = database.tblSaches.Select(item => item.MaSach);
             cmbChuDe.ItemsSource = database.tblChuDes.Select(item => item.TenChuDe);
             cmbTacGia.ItemsSource = database.tblTacGias.Select(item => item.TenTacGia);
-            cmbMaSach.SelectedIndex = 0;
         }       
 
         private void Thoat_Click(object sender, RoutedEventArgs e)
@@ -41,7 +38,9 @@ namespace HuynhVanThao_141800706
             dtgSach.ItemsSource = from a in database.tblSaches
                                   join b in database.tblViTriSaches on a.MaSach equals b.MaSach
                                   select new { a.MaSach,a.TenSach, a.ChuDe, a.TacGia, a.NhaXB, a.NamXB,a.SoLuong,a.DonGia,b.KhuVuc, b.KeSach, b.OSach };
-            
+            cmbMaSach.ItemsSource = database.tblSaches.Select(item => item.MaSach);
+            cmbMaSach.SelectedIndex = 0;
+
         }
 
         private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)

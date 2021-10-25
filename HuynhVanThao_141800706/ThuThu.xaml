@@ -16,7 +16,7 @@
         ResizeMode="NoResize">
 
     <Window.Background>
-        <ImageBrush ImageSource="image/thuthu.jpg"></ImageBrush>
+        <ImageBrush ImageSource="image/thuviengd.jpg" Stretch="UniformToFill"></ImageBrush>
     </Window.Background>
 
     <Window.Resources>
@@ -57,7 +57,7 @@
         </Grid>
         <materialDesign:Chip x:Name="chip"
                              ToolTip="Xin chào !"
-                             Content="Họ và tên" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
+                             Content="Họ và tên" Foreground="WhiteSmoke" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,10,0" VerticalAlignment="Top" MinWidth="100" >
             <materialDesign:Chip.Icon>
                 <Image Source="image/thuthu.png" />
             </materialDesign:Chip.Icon>

@@ -84,7 +84,6 @@ namespace HuynhVanThao_141800706
                 if(result == MessageBoxResult.Yes)
                 {
                     XoaSinhVien();
-                    MessageBox.Show("Xóa thông tin sinh viên thành công", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information); ;
                     LayDuLieu();
                 }           
             } 
@@ -141,9 +140,18 @@ namespace HuynhVanThao_141800706
 
         private void XoaSinhVien()
         {
-            tblSinhVien sv = database.tblSinhViens.Single(item => item.MaSV == txtMaSV.Text);
-            database.tblSinhViens.DeleteOnSubmit(sv);
-            database.SubmitChanges();
+            try
+            {
+                tblSinhVien sv = database.tblSinhViens.Single(item => item.MaSV == txtMaSV.Text);
+                database.tblSinhViens.DeleteOnSubmit(sv);
+                database.SubmitChanges();
+                MessageBox.Show("Xóa thông tin sinh viên thành công", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information); ;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa không thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

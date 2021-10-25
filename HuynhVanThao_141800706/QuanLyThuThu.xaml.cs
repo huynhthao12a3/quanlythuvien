@@ -96,7 +96,6 @@ namespace HuynhVanThao_141800706
                 if (result == MessageBoxResult.Yes)
                 {
                     XoaThuThu();
-                    MessageBox.Show("Xóa thông tin thủ thư thành công", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information); ;
                     LayDuLieu();
                 }
             }
@@ -208,9 +207,18 @@ namespace HuynhVanThao_141800706
 
         private void XoaThuThu()
         {
-            tblThuThu tt = database.tblThuThus.Single(item => item.MaTT == txtMaTT.Text);
-            database.tblThuThus.DeleteOnSubmit(tt);
-            database.SubmitChanges();
+            try
+            {
+                tblThuThu tt = database.tblThuThus.Single(item => item.MaTT == txtMaTT.Text);
+                database.tblThuThus.DeleteOnSubmit(tt);
+                database.SubmitChanges();
+                MessageBox.Show("Xóa thông tin thủ thư thành công", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Information); ;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa không thành công.", "Thông Tin", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
         }
     }
 }

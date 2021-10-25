@@ -312,10 +312,7 @@ namespace HuynhVanThao_141800706
             sach.SoLuong = Convert.ToString(slSach);
             database.SubmitChanges();
         }
-        private void LayDuLieuLichSu()
-        {
-
-        }
+   
 
         
     }
